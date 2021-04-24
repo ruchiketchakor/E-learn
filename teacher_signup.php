@@ -16,9 +16,9 @@ $teacher_dept= $_POST['department'];
 $teacher_link = $_POST['website'];
 $teacher_city = $_POST['city'];
 $teacher_state= $_POST['state'];
-$teacher_pic= $_POST['pic'];
+$teacher_pic = $_FILES["pic"]["name"];  
+// $teacher_pic= $_POST['pic'];
 $teacher_bio = $_POST['bio'];
-
 
 $existSql = "SELECT * FROM `users` WHERE user_email='$teacher_email'";
 $res = mysqli_query($conn, $existSql);
@@ -30,6 +30,8 @@ if($numrow>1){
 }
 elseif($numrow==1 && $row['user_category']=="Teacher")
 {
+    
+
 $sql= "INSERT INTO `teachers` ( `name`,`email`, `designation`,`university`, `department`,`website`,`city`,`state`,`photo`,`bio`) 
 VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$teacher_dept','$teacher_link','$teacher_city','$teacher_state','$teacher_pic','$teacher_bio')";
  $result = mysqli_query($conn, $sql);
@@ -47,6 +49,7 @@ VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$tea
 else{
      header("Location:teacher_signup.php?teacher=fail");
 }
+
 }
 ?>
 

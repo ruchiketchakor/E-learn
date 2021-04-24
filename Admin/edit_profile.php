@@ -13,7 +13,7 @@ $teacher_dept= $_POST['department'];
 $teacher_link = $_POST['website'];
 $teacher_city = $_POST['city'];
 $teacher_state= $_POST['state'];
-// $teacher_pic= $_POST['pic'];
+$teacher_pic= $_POST['pic'];
 $teacher_bio = $_POST['bio'];
 
 $result = mysqli_query($conn, "UPDATE `teachers` SET   `name`='$teacher_name', `email`='$teacher_email',`designation`='$teacher_desi',`university`='$teacher_uni',`department`='$teacher_dept',`website`='$teacher_link',`city`='$teacher_city', `state`='$teacher_state',`bio`='$teacher_bio'  where id='$id'");       
