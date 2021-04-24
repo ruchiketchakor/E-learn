@@ -127,9 +127,10 @@ $row = mysqli_fetch_assoc($res);
         </div>
         <!-- End Navigation -->
         <div class="clearfix"></div>
-
+        <!-- Dashboard -->
         <section class="gray pt-0">
     <div class="container-fluid">
+
 
         <!-- Row -->
         <div class="row">
@@ -145,8 +146,13 @@ $row = mysqli_fetch_assoc($res);
 
                     <div class="d-navigation">
                         <ul id="side-menu">
-                            <li><a href="dashboard.html"><i class="ti-user"></i>Dashboard</a></li>
-                            <li class="active"><a href="my-profile.php?id=<?php echo $row['id']?>"><i class="ti-heart"></i>My Profile</a></li>
+                            <li><a href="dashboard.php"><i class="ti-user"></i>Dashboard</a></li>
+                            <li class="active"><a href="details1.php"><i class="ti-settings"></i>Course
+                                    Details</a>
+
+                            <li><a href="my-profile.html"><i class="ti-heart"></i>My Profile</a>
+
+                            </li>
                             <li><a href="saved-courses.html"><i class="ti-heart"></i>Saved Courses</a></li>
                             <li class="dropdown">
                                 <a href="all-courses.html"><i class="ti-layers"></i>All Courses<span
@@ -160,7 +166,8 @@ $row = mysqli_fetch_assoc($res);
                                 </ul>
                             </li>
                             <li><a href="my-order.html"><i class="ti-shopping-cart"></i>My Order</a></li>
-                            <li><a href="settings.html"><i class="ti-settings"></i>Settings</a></li>
+                            <li><a href="settings.html"><i class="ti-settings"></i>Settings</a>
+                            </li>
                             <li><a href="reviews.html"><i class="ti-comment-alt"></i>Reviews</a></li>
                             <li><a href="#"><i class="ti-power-off"></i>Log Out</a></li>
                         </ul>
@@ -170,3 +177,4 @@ $row = mysqli_fetch_assoc($res);
 
 
             </div>
+
