@@ -7,6 +7,7 @@ $id=$_SESSION['teacherid'];
 $query="SELECT * from `teachers` where `id` = '$id'";
 $res = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($res);
+$activePage = basename($_SERVER['PHP_SELF'], ".php");
 
 ?>
 
@@ -50,7 +51,7 @@ $row = mysqli_fetch_assoc($res);
         <!-- Top header  -->
         <!-- ============================================================== -->
         <!-- Start Navigation -->
-        <div class="header header-light head-shadow">
+        <!-- <div class="header header-light head-shadow">
             <div class="container">
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
@@ -64,7 +65,7 @@ $row = mysqli_fetch_assoc($res);
     
                         <ul class="nav-menu">
 
-                            <li class><a href="index.php">Home<span class="submenu-indicator"></span></a>
+                            <li class><a href="dashboard.php">Home<span class="submenu-indicator"></span></a>
 
                             </li>
                             <li><a href="about-us.php">About<span class="submenu-indicator"></span></a>
@@ -124,7 +125,8 @@ $row = mysqli_fetch_assoc($res);
                     </div>
                 </nav>
             </div>
-        </div>
+        </div> -->
+        
         <!-- End Navigation -->
         <div class="clearfix"></div>
         <!-- Dashboard -->
@@ -139,21 +141,21 @@ $row = mysqli_fetch_assoc($res);
                 <div class="dashboard-navbar">
 
                     <div class="d-user-avater">
-                        <img src="assets/img/user-3.jpg" class="img-fluid avater" alt="">
-                        <h4>Adam Harshvardhan</h4>
-                        <span>Canada USA</span>
+                        <img src="assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid avater" alt="">
+                        <h4><?php echo $row['name']?></h4>
+                        <span><?php echo $row['city'] .' , '. $row['state']?></span>
                     </div>
 
                     <div class="d-navigation">
                         <ul id="side-menu">
-                            <li><a href="dashboard.php"><i class="ti-user"></i>Dashboard</a></li>
-                            <li class="active"><a href="details1.php"><i class="ti-settings"></i>Course
+                            <li class="<?= ($activePage == 'dashboard') ? 'active':''; ?>"><a href="dashboard.php"><i class="ti-user"></i>Dashboard</a></li>
+                            <li class="<?= ($activePage == 'details1') ? 'active':''; ?>" ><a href="details1.php"><i class="ti-settings"></i>Course
                                     Details</a>
 
-                            <li><a href="my-profile.html"><i class="ti-heart"></i>My Profile</a>
+                            <li class="<?= ($activePage == 'my-profile') ? 'active':''; ?>"><a href="my-profile.php"><i class="ti-heart"></i>My Profile</a>
 
                             </li>
-                            <li><a href="saved-courses.html"><i class="ti-heart"></i>Saved Courses</a></li>
+                            <li class="<?= ($activePage == 'saved-courses') ? 'active':''; ?>"><a href="saved-courses.html"><i class="ti-heart"></i>Saved Courses</a></li>
                             <li class="dropdown">
                                 <a href="all-courses.html"><i class="ti-layers"></i>All Courses<span
                                         class="ti-angle-left"></span></a>
@@ -169,7 +171,8 @@ $row = mysqli_fetch_assoc($res);
                             <li><a href="settings.html"><i class="ti-settings"></i>Settings</a>
                             </li>
                             <li><a href="reviews.html"><i class="ti-comment-alt"></i>Reviews</a></li>
-                            <li><a href="#"><i class="ti-power-off"></i>Log Out</a></li>
+                            <li><a href="admin-logout.php"><i class="ti-power-off"></i>Log Out</a></li>
+                           
                         </ul>
                     </div>
 

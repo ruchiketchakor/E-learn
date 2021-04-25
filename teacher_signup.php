@@ -5,8 +5,8 @@ if(!isset(  $_SESSION['signotp'])){
    header("Location:index.php?wrongurl");
 }
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-    include 'partials/db_connect.php';
+include 'partials/db_connect.php';
+if (isset($_POST['submit'])) {
 
 $teacher_name = $_POST['tname'];
 $teacher_email= $_POST['temail'];
@@ -16,8 +16,7 @@ $teacher_dept= $_POST['department'];
 $teacher_link = $_POST['website'];
 $teacher_city = $_POST['city'];
 $teacher_state= $_POST['state'];
-$teacher_pic = $_FILES["pic"]["name"];  
-// $teacher_pic= $_POST['pic'];
+$teacher_pic = $_FILES['pic']['name'];  
 $teacher_bio = $_POST['bio'];
 
 $existSql = "SELECT * FROM `users` WHERE user_email='$teacher_email'";
@@ -30,7 +29,8 @@ if($numrow>1){
 }
 elseif($numrow==1 && $row['user_category']=="Teacher")
 {
-    
+    $target="Admin/assets/teacher_images/". $teacher_pic;
+  if( move_uploaded_file($_FILES['pic']['tmp_name'],$target)){
 
 $sql= "INSERT INTO `teachers` ( `name`,`email`, `designation`,`university`, `department`,`website`,`city`,`state`,`photo`,`bio`) 
 VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$teacher_dept','$teacher_link','$teacher_city','$teacher_state','$teacher_pic','$teacher_bio')";
@@ -45,6 +45,10 @@ VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$tea
      header("Location:Admin/dashboard.php");
      exit();
     }
+}
+else{
+    echo "noo";
+}
 }
 else{
      header("Location:teacher_signup.php?teacher=fail");
@@ -111,7 +115,7 @@ else{
                          <div class="m-4">
                          <h3 class="text-danger">Sign Up Details</h3>
                          </div>
-                     <form  method="post">
+                     <form  method="post" enctype="multipart/form-data">
 							
                                 <div class="form-group">
                              <input type="text"  name="tname" class="form-control" placeholder="Name" required>
@@ -148,7 +152,7 @@ else{
                                                 
                                
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-theme btn-rounded">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-theme btn-rounded">Submit</button>
                                 </div>
                             
                             </form>
