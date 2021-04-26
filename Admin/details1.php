@@ -1,6 +1,58 @@
 <?php
 include './admin_header.php';
 ?>
+<?php
+include '../partials/db_connect.php';
+
+if (isset($_POST['upload'])) 
+{
+	// $name = $_FILES['file'];
+	// echo "<pre>";
+	// print_r($name);
+	// exit();
+    $course_title=$_POST['course_title'];
+    $course_duration=$_POST['course_duration'];
+    $lectures=$_POST['lectures'];
+    $overview=$_POST['overview'];
+    $price=$_POST['price'];
+    $amount=$_POST['amount'];
+    $name=$_FILES["file"]["name"];
+
+    $total=count($_FILES['file']['name']);
+    $video_link=array();
+
+    for($i=0;$i<$total;$i++)
+    {
+        $tmpFilePath=$_FILES['file']['tmp_name'][$i];
+
+        if($tmpFilePath!="")
+        {
+            $newFilePath="assets/upload_video/".$_FILES['file']['name'][$i];
+
+            if(move_uploaded_file($tmpFilePath,$newFilePath))
+            {
+                array_push($video_link,$newFilePath);
+            }
+        }
+    }
+
+    $video_name=implode(",",$video_link);
+    $flag=0;
+
+    $result=mysqli_query($conn,"INSERT INTO video (course_title, course_duration, lectures, overview, price, amount, name) VALUES ('$course_title','$course_duration','$lectures','$overview','$price','$amount','$video_name')");
+
+    if($result)
+    {
+        $success= "Your video successfully uploaded";
+    }
+    else
+    {
+        $failed="Not uploaded";
+    }
+}
+
+        
+?>
 
             <div class="col-lg-9 col-md-9 col-sm-12">
 
@@ -33,7 +85,7 @@ include './admin_header.php';
                                                     </div>
                                                     <!-- <form action="javascript:sendmail()" method="POST"> -->
                                                     <div class="prc_wrap-body">
-                                                        <form action="javascript:sendmail()" method="POST" onsubmit="return validation()">
+                                                        <form action="details1.php" method="POST" enctype="multipart/form-data" onsubmit="return validation()">
                                                             <!-- <div class="row">
 																		<div class="col-lg-6 col-md-12">
 																			<div class="form-group">
@@ -46,42 +98,42 @@ include './admin_header.php';
 
                                                             <div class="form-group">
                                                                 <label>Course Title</label>
-                                                                <input type="text" class="form-control simple"
+                                                                <input type="text" class="form-control simple" name="course_title"
                                                                     id="ctitle"required >
                                                             </div>
                                                                     
                                                                     
                                                             <div class="form-group">
                                                                 <label>Course Duration</label>
-                                                                <input type="text" class="form-control simple"
+                                                                <input type="text" class="form-control simple" name="course_duration"
                                                                     id="coursed" required>
                                     
                                                             </div>
                                                             <div class="form-group">
                                                                 <div class="form-group">
                                                                     <label>No.of Lectures</label>
-                                                                    <input type="text" class="form-control simple"
+                                                                    <input type="text" class="form-control simple" name="lectures"
                                                                         id="nolecture" required>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <label>Course Overview</label>
-                                                                <input type="text" class="form-control simple"
+                                                                <input type="text" class="form-control simple" name="overview"
                                                                     id="coverview" required>
                                                             </div>
                                                             <div class="row">
 
-                                                                <div class=" form-group container">
+                                                                <div class=" form-group container" >
                                                                     <label>Course Price</label>
 
 
-                                                                    <select type="text" id="mySelect"
+                                                                    <select type="text" id="mySelect" name="price"
                                                                         onchange="toggle()"
                                                                         class="form-control simple px-auto">
 
-                                                                        <option value="Free">Free</option>
-                                                                        <option value="Paid">Paid</option>
+                                                                        <option value="Free">Paid</option>
+                                                                        <option value="Paid">Free</option>
                                                                     </select>
 
 
@@ -113,6 +165,7 @@ include './admin_header.php';
                                                                 </div> -->
 
                                                             </div>
+                                                            
                                                             <div class=" form-group container text-center">
                                                                 <label><b>Upload Courses here</b><label>
 
@@ -121,15 +174,37 @@ include './admin_header.php';
 
                                                             <div class="input-group mb-3">
 
-                                                                <input type="file" class="form-control"
+                                                                <input type="file" class="form-control" name="file[]" multiple
                                                                     id="inputGroupFile02" required>
 
                                                             </div>
+                                                            <?php if(isset($success)) { ?>
+                                                            <div class="alert alert-success">
+
+                                                                
+
+                                                                    <?php echo $success;?>
+
+                                                            </div>
+                                                            <?php } ?>
+                                                            <?php if(isset($failed)) { ?>
+                                                            <div class="alert alert-danger">
+
+                                                                
+
+                                                                    <?php echo $failed;?>
+
+                                                            </div>
+                                                            <?php } ?>
+
+                                                            
+
                                                             <div class="form-group text-center">
-                                                                <button class="btn btn-theme " type="submit"
+                                                                <button class="btn btn-theme " type="submit" name="upload"
                                                                     for="inputGroupFile02">Upload</button>
 
                                                             </div>
+                                                        
 
                                                         </form>
 
@@ -190,10 +265,10 @@ include './admin_header.php';
 function toggle() {
     var amount = document.getElementById('amount');
 
-    if (amount.style.display == 'block') {
-        amount.style.display = 'none';
-    } else {
+    if (amount.style.display == 'none') {
         amount.style.display = 'block';
+    } else {
+        amount.style.display = 'none';
     }
 }
 
