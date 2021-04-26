@@ -1,20 +1,9 @@
 <?php
 include './admin_header.php';
 ?>
-<!-- ============================================================== -->
-<!-- Top header  -->
-<!-- ============================================================== -->
-
-
-<!-- ============================ Dashboard: My Order Start ================================== -->
-
 
             <div class="col-lg-9 col-md-9 col-sm-12">
 
-
-                <!-- /Row -->
-
-                <!-- Row -->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
                         <div class="dashboard_container">

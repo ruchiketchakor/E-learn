@@ -33,7 +33,7 @@ $row =mysqli_fetch_assoc($result)
                             <div class="dashboard_container_body p-4">
                                 <div class="viewer_detail_wraps">
                                     <div class="viewer_detail_thumb">
-                                        <img src="assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
+                                        <img src="assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" style="height:150px; width:150px;" alt="" />
                                         <!-- <div class="viewer_status">pro</div> -->
                                     </div>
                                     <div class="caption">

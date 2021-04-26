@@ -41,6 +41,7 @@ VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$tea
     $run = mysqli_query($conn, $query);
     $row1 = mysqli_fetch_assoc($run);
     //  $row = mysqli_fetch_assoc($res);
+    $_SESSION['teacher-name'] =$teacher_name;
       $_SESSION['teacherid'] = $row1['id'];
      header("Location:Admin/dashboard.php");
      exit();

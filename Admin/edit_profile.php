@@ -107,9 +107,9 @@ include './admin_header.php';
                     <div class="viewer_detail_wraps">
                         <div class="viewer_detail_thumb order-last" style=" top:0;">
                             <form method="post" enctype="multipart/form-data">
-                                <img id="blah" src="assets/teacher_images/<?php echo $row['photo']?>"  style="width:100px;height:100px" class="img-fluid" alt="" />
+                                <img id="blah" src="assets/teacher_images/<?php echo $row['photo']?>"  class="img-fluid" style="width:100px;height:100px" alt="" />
                                 <!-- <img id="blah" class="mt-3 border" src="#" alt="your image" /> -->
-       
+
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label>Photo</label>

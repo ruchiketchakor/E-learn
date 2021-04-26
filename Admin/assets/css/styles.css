@@ -736,11 +736,11 @@ div[data-overlay] p{
     animation: spinner-border .75s linear infinite;
 }
 
-.spinner-border-sm {
+/* .spinner-border-sm {
   width: $spinner-width-sm;
   height: $spinner-height-sm;
   border-width: $spinner-border-width-sm;
-}
+} */
 
 .sr-only {
     position: absolute;
@@ -5293,7 +5293,7 @@ ul.social_info li a {
 .viewer_detail_thumb {
     width: 150px;
     height: 150px;
-    top: -115px;
+    top: -165px;
     border-radius: 50%;
     position:relative;
     margin-right: 3rem;

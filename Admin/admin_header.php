@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['teacherid'])){
+    header("Location:../index.php");
+ }
+ 
 include '../partials/db_connect.php';
 
 $id=$_SESSION['teacherid'];
@@ -47,85 +52,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <!-- ============================================================== -->
     <div id="main-wrapper">
 
-        <!-- ============================================================== -->
-        <!-- Top header  -->
-        <!-- ============================================================== -->
-        <!-- Start Navigation -->
-        <!-- <div class="header header-light head-shadow">
-            <div class="container">
-                <nav id="navigation" class="navigation navigation-landscape">
-                    <div class="nav-header">
-                        <a class="nav-brand static-logo align-to-left" href="index.php">
-                            <img src="assets/img/Elearn.png" class="logo" alt="" />
-                        </a>
-
-                        <div class="nav-toggle"></div>
-                    </div>
-                    <div class="nav-menus-wrapper" style="transition-property: none; margin-top: 38px; font-size: large;">
-    
-                        <ul class="nav-menu">
-
-                            <li class><a href="dashboard.php">Home<span class="submenu-indicator"></span></a>
-
-                            </li>
-                            <li><a href="about-us.php">About<span class="submenu-indicator"></span></a>
-
-                            </li>
-
-                            <li><a href="#">Courses<span class="submenu-indicator"></span></a>
-                                <ul class="nav-dropdown nav-submenu">
-                                    <li><a href="#">Web Development<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-                                    <li><a href="#">Android Development<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-                                    <li><a href="#">Digital Marketing<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-
-                                    <li><a href="#">Artificial Intelligence<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-
-                                    <li><a href="#">Machine Learning<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-
-                                    <li><a href="#">Programming<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-
-                                    <li><a href="#">Programming<span class="submenu-indicator"></span></a>
-                                        <ul class="nav-dropdown nav-submenu"></ul>
-
-                                    </li>
-
-
-
-                                </ul>
-                            </li>
-
-
-                            <li><a href="contact.php">Contact</a></li>
-
-                        </ul>
-
-                        <ul class="nav-menu nav-menu-social align-to-right">
-                            <li class="login_click theme-bg">
-                                <a href="admin-logout.php">Log Out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div> -->
+     
         
         <!-- End Navigation -->
         <div class="clearfix"></div>
@@ -141,7 +68,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="dashboard-navbar">
 
                     <div class="d-user-avater">
-                        <img src="assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid avater" alt="">
+                        <img src="assets/teacher_images/<?php echo $row['photo']?>" style="height:110px; width:110px;" class="img-fluid avater" alt="">
                         <h4><?php echo $row['name']?></h4>
                         <span><?php echo $row['city'] .' , '. $row['state']?></span>
                     </div>
@@ -149,28 +76,12 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     <div class="d-navigation">
                         <ul id="side-menu">
                             <li class="<?= ($activePage == 'dashboard') ? 'active':''; ?>"><a href="dashboard.php"><i class="ti-user"></i>Dashboard</a></li>
-                            <li class="<?= ($activePage == 'details1') ? 'active':''; ?>" ><a href="details1.php"><i class="ti-settings"></i>Course
-                                    Details</a>
-
-                            <li class="<?= ($activePage == 'my-profile') ? 'active':''; ?>"><a href="my-profile.php"><i class="ti-heart"></i>My Profile</a>
-
-                            </li>
-                            <li class="<?= ($activePage == 'saved-courses') ? 'active':''; ?>"><a href="saved-courses.html"><i class="ti-heart"></i>Saved Courses</a></li>
-                            <li class="dropdown">
-                                <a href="all-courses.html"><i class="ti-layers"></i>All Courses<span
-                                        class="ti-angle-left"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li><a href="all-courses.html">All</a></li>
-                                    <li><a href="javascript:void(0);">Published</a></li>
-                                    <li><a href="javascript:void(0);">Pending</a></li>
-                                    <li><a href="javascript:void(0);">Expired</a></li>
-                                    <li><a href="javascript:void(0);">In Draft</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="my-order.html"><i class="ti-shopping-cart"></i>My Order</a></li>
-                            <li><a href="settings.html"><i class="ti-settings"></i>Settings</a>
-                            </li>
-                            <li><a href="reviews.html"><i class="ti-comment-alt"></i>Reviews</a></li>
+                            <li class="<?= ($activePage == 'details1') ? 'active':''; ?>" ><a href="details1.php"><i class="ti-settings"></i>Add Course </a></li>
+                            <li class="<?= ($activePage == 'my-profile') ? 'active':''; ?>"><a href="my-profile.php"><i class="ti-heart"></i>My Profile</a> </li>
+                            <li class="<?= ($activePage == 'all-courses') ? 'active':''; ?>"><a href="all-courses.php"><i class="ti-heart"></i>All Courses</a></li>
+                            <li class="<?= ($activePage == 'enrolled_student') ? 'active':''; ?>"><a href="enrolled_student.php"><i class="ti-heart"></i>Enrolled Students</a></li>
+                            <li class="<?= ($activePage == 'reviews') ? 'active':''; ?>"><a href="reviews.php"><i class="ti-heart"></i>Notifications</a></li>
+                            <li class="<?= ($activePage == 'contact') ? 'active':''; ?>"><a href="contact.php"><i class="ti-heart"></i>Contact</a></li>
                             <li><a href="admin-logout.php"><i class="ti-power-off"></i>Log Out</a></li>
                            
                         </ul>
