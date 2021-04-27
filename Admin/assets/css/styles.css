@@ -9080,6 +9080,86 @@ ul.cources_facts_list li {
     padding:5px 10px;
 }
 }
+/* My changes to css */
+@media(min-width:300px) and (max-width:576px)
+{
+    .dashboard_container_header {
+        display: block;
+        
+    }
+    .dashboard_fl_1 h4 {
+        margin: 0.5rem;
+        
+        text-align: inherit;
+    }
+    
+
+.form-control {
+    
+    font-size: 15px;
+}
+}
+
+
+
+@media(min-width:0px) and (max-width:300px)
+{
+    .dashboard_container_header {
+        display: block;
+         margin: 8px 12px;
+    }
+    .dashboard_fl_1 h4 {
+        margin: auto;
+        text-align: inherit;
+    }
+   
+    
+
+.form-control {
+   
+    font-size: 13px;
+    
+}
+.dashboard_single_course_head {
+    display: block;
+    align-items: center;
+    width: 100%;
+}
+
+}
+@media(min-width:0px) and (max-width:300px)
+{
+    .dashboard_stats_wrap_content span {
+        
+        display: table-caption;
+    }
+}
+
+@media(min-width:300px) and (max-width:775px)
+{
+    .dashboard_stats_wrap_content span {
+        
+        display: inline-block;
+    }
+}
+
+@media(min-width:776px) and (max-width:1276px)
+{
+    .dashboard_stats_wrap_content span {
+        
+        display: table-caption;
+    }
+}
+@media(max-width:276px)
+{
+    .btn{
+        padding:6px 10px
+    }
+}
+  
+  
+  
+  
 
     
   
