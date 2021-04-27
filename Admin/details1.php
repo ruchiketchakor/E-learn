@@ -39,11 +39,11 @@ if (isset($_POST['upload']))
     $video_name=implode(",",$video_link);
     $flag=0;
 
-    $result=mysqli_query($conn,"INSERT INTO video (course_title, course_duration, lectures, overview, price, amount, name) VALUES ('$course_title','$course_duration','$lectures','$overview','$price','$amount','$video_name')");
+    $result=mysqli_query($conn,"INSERT INTO courses (course_title, course_duration, lectures, overview, price, amount, name) VALUES ('$course_title','$course_duration','$lectures','$overview','$price','$amount','$video_name')");
 
     if($result)
     {
-        $success= "Your video successfully uploaded";
+        $success= "Your courses successfully uploaded";
     }
     else
     {
@@ -132,8 +132,8 @@ if (isset($_POST['upload']))
                                                                         onchange="toggle()"
                                                                         class="form-control simple px-auto">
 
-                                                                        <option value="Free">Paid</option>
-                                                                        <option value="Paid">Free</option>
+                                                                        <option value="Paid">Paid</option>
+                                                                        <option value="0">Free</option>
                                                                     </select>
 
 
