@@ -26,7 +26,7 @@
 											<div class="dashboard_fl_1">
 											<h4>All Courses</h4>
 											</div>
-											<div class="dashboard_fl_2">
+											<!-- <div class="dashboard_fl_2">
 												<ul class="mb0">
 													<li class="list-inline-item">
 														
@@ -38,7 +38,7 @@
 														</form>
 													</li>
 												</ul>
-											</div>
+											</div> -->
 										</div>
 										<div class="dashboard_container_body">
 											
@@ -86,11 +86,11 @@
 																<!-- <li class="list-inline-item"><i class="ti-user mr-1"></i>4512 Enrolled</li>
 																<li class="list-inline-item"><i class="ti-comment-alt mr-1"></i>112 Comments</li>
 																 -->
-																 <button class="btn mt-2" style="background-color:green; border-radius:2rem;"
+																 <button class="btn mt-2 p-2" style="background-color:green; border-radius:2rem;"
                                                                         type="button" onclick="location.href='edit_video.php'">Edit</button>
 																
 														
-                                                                    <button class="btn btn-danger mt-2" style="border-radius:2rem;"
+                                                                    <button class="btn btn-danger  p-2 mt-2" style="border-radius:2rem;"
                                                                         type="button">Delete</button>
 															</ul>
 														</div>
@@ -139,11 +139,11 @@
 														</div> -->
 														<div class="dashboard_single_course_progress_2">
 															<ul class="m-0">
-															<button class="btn mt-2" style="background-color:green; border-radius:2rem;"
+															<button class="btn mt-2 p-2" style="background-color:green; border-radius:2rem;"
                                                                         type="button" onclick="location.href='edit_video.php'">Edit</button>
 																
 														
-                                                                    <button class="btn btn-danger mt-2" style="border-radius:2rem;"
+                                                                    <button class="btn btn-danger mt-2 p-2" style="border-radius:2rem;"
                                                                         type="button">Delete</button>
 															</ul>
 														</div>
@@ -194,11 +194,11 @@
 															<ul class="m-0">
 																<!-- <li class="list-inline-item"><i class="ti-user mr-1"></i>6587 Enrolled</li>
 																<li class="list-inline-item"><i class="ti-comment-alt mr-1"></i>365 Comments</li> -->
-																<button class="btn mt-2" style="background-color:green; border-radius:2rem;"
+																<button class="btn mt-2 p-2" style="background-color:green; border-radius:2rem;"
                                                                         type="button" onclick="location.href='edit_video.php'">Edit</button>
 																
 														
-                                                                    <button class="btn btn-danger mt-2" style="border-radius:2rem;"
+                                                                    <button class="btn btn-danger mt-2 p-2" style="border-radius:2rem;"
                                                                         type="button">Delete</button>
 															</ul>
 														</div>
@@ -249,11 +249,11 @@
 															<ul class="m-0">
 																<!-- <li class="list-inline-item"><i class="ti-user mr-1"></i>6582 Enrolled</li>
 																<li class="list-inline-item"><i class="ti-comment-alt mr-1"></i>65 Comments</li> -->
-																<button class="btn mt-2" style="background-color:green; border-radius:2rem;"
+																<button class="btn mt-2 p-2" style="background-color:green; border-radius:2rem;"
                                                                         type="button" onclick="location.href='edit_video.php'">Edit</button>
 																
 														
-                                                                    <button class="btn btn-danger mt-2" style="border-radius:2rem;"
+                                                                    <button class="btn btn-danger mt-2 p-2" style="border-radius:2rem;"
                                                                         type="button">Delete</button>
 															</ul>
 														</div>
@@ -275,33 +275,7 @@
 					
 				</div>
 			</section>
-			<!-- ============================ Dashboard: My Order Start End ================================== -->
-			
-			<!-- ============================== Start Newsletter ================================== -->
-			<!-- <section class="newsletter theme-bg inverse-theme">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-7 col-md-8 col-sm-12">
-							<div class="text-center">
-								<h2>Join Thousand of Happy Students!</h2>
-								<p>Subscribe our newsletter & get latest news and updation!</p>
-								<form class="sup-form">
-									<input type="email" class="form-control sigmup-me" placeholder="Your Email Address" required="required">
-									<input type="submit" class="btn btn-theme" value="Get Started">
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!-- ================================= End Newsletter =============================== -->
-			
-			<!-- ============================ Footer Start ================================== -->
-			<?php
-			include './admin_footer.php';
-			?>
-			<!-- End Modal -->
-			
+		
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 			
 
