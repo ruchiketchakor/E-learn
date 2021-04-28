@@ -11,11 +11,14 @@ if (isset($_POST['upload']))
 	// print_r($name);
 	// exit();
     $course_title=$_POST['course_title'];
+    $course_category=$_POST['course_category'];
     $course_duration=$_POST['course_duration'];
     $lectures=$_POST['lectures'];
     $overview=$_POST['overview'];
     $price=$_POST['price'];
     $amount=$_POST['amount'];
+    $thumbnail=$_FILES["doc"]["name"];
+    $target="assets/course_images/".$_FILES['doc']['name'];
     $name=$_FILES["file"]["name"];
 
     $total=count($_FILES['file']['name']);
@@ -38,16 +41,20 @@ if (isset($_POST['upload']))
 
     $video_name=implode(",",$video_link);
     $flag=0;
-
-    $result=mysqli_query($conn,"INSERT INTO courses (course_title, course_duration, lectures, overview, price, amount, name) VALUES ('$course_title','$course_duration','$lectures','$overview','$price','$amount','$video_name')");
-
-    if($result)
+    if(move_uploaded_file($_FILES['doc']['tmp_name'],$target))
     {
-        $success= "Your courses successfully uploaded";
-    }
-    else
-    {
-        $failed="Not uploaded";
+
+        $result=mysqli_query($conn,"INSERT INTO courses (course_title, course_category, course_duration, lectures, overview, price, amount,thumbnail, name) VALUES ('$course_title','$course_category','$course_duration','$lectures','$overview','$price','$amount','$thumbnail','$video_name')");
+    
+
+        if($result)
+        {
+            $success= "Your course successfully uploaded";
+        }
+        else
+        {
+            $failed="Your course Not uploaded";
+        }
     }
 }
 
@@ -164,6 +171,14 @@ if (isset($_POST['upload']))
                                                                         type="submit">Free</button>
                                                                 </div> -->
 
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Add Thumbnail</label>
+                                                                <div class="input-group mb-3">
+
+                                                                    <input type="file" class="form-control" name="doc"
+                                                                    id="inputGroupFile02" required>
+                                                                </div>
                                                             </div>
                                                             
                                                             <div class=" form-group container text-center">
