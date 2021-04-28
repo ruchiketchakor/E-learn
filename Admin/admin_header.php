@@ -52,7 +52,27 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <!-- ============================================================== -->
     <div id="main-wrapper">
 
-     
+    <div class="header header-light head-shadow">
+            <div class="container">
+                <nav id="navigation" class="navigation navigation-landscape">
+                    <div class="nav-header">
+                        <a class="nav-brand static-logo align-to-left p-0" href="index.php">
+                            <img src="assets/img/Elearn.png" class="logo" alt="" />
+                        </a>
+
+                        <div class="nav-toggle"></div>
+                    </div>
+                    <div class="nav-menus-wrapper" style="transition-property: none; margin-top: 38px; font-size: large;">
+    
+                        <ul class="nav-menu nav-menu-social align-to-right">
+                            <li class="login_click theme-bg" style="top:-10px;">
+                                <a href="admin-logout.php">Log Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
         
         <!-- End Navigation -->
         <div class="clearfix"></div>

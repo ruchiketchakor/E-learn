@@ -35,6 +35,11 @@ elseif($numrow==1 && $row['user_category']=="Teacher")
 $sql= "INSERT INTO `teachers` ( `name`,`email`, `designation`,`university`, `department`,`website`,`city`,`state`,`photo`,`bio`) 
 VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$teacher_dept','$teacher_link','$teacher_city','$teacher_state','$teacher_pic','$teacher_bio')";
  $result = mysqli_query($conn, $sql);
+ 
+ $html="<b>Hello</b>,<br><h2>".$teacher_name." Wants Approval for teacher admin panel!</h2>Please aprrove this teacher after varification. 
+ <br> please login to system and check the ".$teacher_name."  detail.</b><br><br> Regards,<br>Elearn ";
+//  smtp_mailer( $teacher_email,'Teacher Approval',$html);
+
  if($result){
 
     $query = "SELECT * FROM `teachers` WHERE email='$teacher_email'";
@@ -43,7 +48,7 @@ VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$tea
     //  $row = mysqli_fetch_assoc($res);
     $_SESSION['teacher-name'] =$teacher_name;
       $_SESSION['teacherid'] = $row1['id'];
-     header("Location:Admin/dashboard.php");
+     header("Location:Admin/time.php");
      exit();
     }
 }
@@ -55,6 +60,35 @@ else{
      header("Location:teacher_signup.php?teacher=fail");
 }
 
+}
+
+ 
+function smtp_mailer($to,$subject,  $showError){
+    include('partials/smtp/PHPMailerAutoload.php');
+    $mail=new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host="smtp.gmail.com";
+    $mail->Port=587;
+    $mail->SMTPSecure="tls";
+    $mail->SMTPAuth=true;
+    $mail->Username="joneymaske@gmail.com";
+    $mail->Password="joneymaske@1315";
+    $mail->SetFrom("joneymaske@gmail.com");
+    $mail->addAddress($to);
+    $mail->IsHTML(true);
+    $mail->Subject=$subject;
+    $mail->Body=$showError;
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
+    if($mail->send()){
+        echo "Mail send";
+    }else{
+        echo "Error occur";
+    }
+    // echo $msg;
 }
 ?>
 
