@@ -4655,7 +4655,7 @@ ul.cources_facts_list li:after {
     padding: 0 20px 20px;
 }
 /*------------- Watching Videos ---------------*/
-/* .edu-watching {
+.edu-watching {
     position: relative;
     width: 100%;
     display: block;
@@ -4708,7 +4708,7 @@ ul.cources_facts_list li:after {
     justify-content: center;
     height: 32px;
     line-height: 0;
-} */
+}
 /*--------------------- Trips Design ----------------*/
 .trips_top {
     position: relative;
@@ -5693,7 +5693,7 @@ ul.list_ed_detail2 li.tag-5 strong, ul.list_ed_detail2 li.tag-5 i {
     font-weight: 600;
 }
 /*---------- Video -------------*/
-/* .property_video {
+.property_video {
     position: relative;
 }
 .property_video:before {
@@ -5753,7 +5753,7 @@ ul.list_ed_detail2 li.tag-5 strong, ul.list_ed_detail2 li.tag-5 i {
     align-items: center;
     justify-content: center;
     background: rgba(255,255,255,1);
-} */
+}
 
 /*------------ Overview --------------*/
 .edu_wraper {
