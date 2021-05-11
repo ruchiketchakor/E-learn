@@ -1,6 +1,10 @@
 <?php
  include 'db_connect.php';
 session_start();
+
+ if(isset($_SESSION['teacherid'])){
+    header("Location:Admin/dashboard.php");
+ }
 ?>
 
 
@@ -63,36 +67,15 @@ session_start();
 									<ul class="nav-dropdown nav-submenu">
 									
 										<!-- <li><a href="list-with-sidebar.html">List Layout with Sidebar</a></li> -->
-										<li><a href="full-width-course-3.html">Web Development<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu"></ul>
-											<li><a href="#">Android Development<span class="submenu-indicator"></span></a>
-												<ul class="nav-dropdown nav-submenu"></ul>
-												<li><a href="#">Digital Marketing<span class="submenu-indicator"></span></a>
-													<ul class="nav-dropdown nav-submenu"></ul>
-													<li><a href="#">Artificial Intelligence<span class="submenu-indicator"></span></a>
-														<ul class="nav-dropdown nav-submenu"></ul>
-														<li><a href="#">Machine Learning<span class="submenu-indicator"></span></a>
-															<ul class="nav-dropdown nav-submenu"></ul>
-															<li><a href="#">Programming<Graphic Designspan class="submenu-indicator"></span></a>
-																<ul class="nav-dropdown nav-submenu"></ul>
-																<li><a href="#">Programming<Graphic Designspan class="submenu-indicator"></span></a>
-																<!-- <li><a href="#">Courses Grid Full Width<span class="submenu-indicator"></span></a>
-																	<li><a href="#">Courses Grid Full Width<span class="submenu-indicator"></span></a> -->
-											
-											
+										<li>
+											<?php
+											 $result = mysqli_query($conn, "SELECT * FROM categories "); 
+											 while($row=mysqli_fetch_assoc($result)){
+											?>
+											<li><a href="course_show.php?id=<?php echo $row['id']?>"><?php echo $row['category_name']?><span class="submenu-indicator"></span></a></li>						
+											<?php }?>
 										</li>
-										<li><a href="#">Courses Detail<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<!-- <li><a href="detail-4.html">Course Detail 4</a></li> -->
-												<!-- <li><a href="detail.html">Course Detail 1</a></li>
-												<li><a href="detail-2.html">Course Detail 2</a></li>
-												<li><a href="detail-3.html">Course Detail 3</a></li> -->
-												<!-- <li><a href="detail-4.html">Course Detail 4</a></li> -->
-												<!-- <li><a href="detail-5.html">Course Detail 5</a></li> -->
-											</ul>
-										</li>
-										<!-- <li><a href="find-instructor.html">Find Instructor</a></li> -->
-										<!-- <li><a href="instructor-detail.html">Instructor Detail</a></li> -->
+										
 									</ul>
 								</li>
 								<li><a href="contact.php">Contact</a></li>

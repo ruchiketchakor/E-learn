@@ -62,7 +62,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<!-- Top header  -->
 		
 			<!-- ============================ Hero Banner  Start================================== -->
-			<div class="image-cover hero_banner hero-inner-2" style="background:#032656;" data-overlay="0">
+			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/bg3.jpg);   background-position: center;
+" data-overlay="0">
 				<div class="container">
 					<!-- Type -->
 					<div class="row align-items-center">
@@ -142,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="flixio pt-5">
-                                <img class="img-fluid" src="assets/img/edu_1.png" alt="">
+                                <!-- <img class="img-fluid" src="assets/img/bg3.jpg" alt=""> -->
                             </div>
 						</div>
 						

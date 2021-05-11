@@ -1,74 +1,64 @@
 <?php
 include './admin_header.php';
 ?>
+
 <?php
 include '../partials/db_connect.php';
 
 if (isset($_POST['upload'])) 
 {
-	// $name = $_FILES['file'];
-	// echo "<pre>";
-	// print_r($name);
-	// exit();
+    $course_id=$_POST['id'];
+    $id=$_SESSION['teacherid'];
     $course_title=$_POST['course_title'];
     $course_category=$_POST['course_category'];
-    $course_duration=$_POST['course_duration'];
     $lectures=$_POST['lectures'];
     $overview=$_POST['overview'];
     $price=$_POST['price'];
     $amount=$_POST['amount'];
     $thumbnail=$_FILES["doc"]["name"];
-    $target="assets/course_images/".$_FILES['doc']['name'];
-    $name=$_FILES["file"]["name"];
 
-    $total=count($_FILES['file']['name']);
-    $video_link=array();
+    // echo  $course_id;
+    $target="assets/course_images/". $thumbnail;
 
-    for($i=0;$i<$total;$i++)
-    {
-        $tmpFilePath=$_FILES['file']['tmp_name'][$i];
+    if( move_uploaded_file($_FILES['doc']['tmp_name'],$target)){
 
-        if($tmpFilePath!="")
-        {
-            $newFilePath="assets/upload_video/".$_FILES['file']['name'][$i];
+        $result=mysqli_query($conn,"INSERT INTO courses (teacher_id,course_title, course_category, lectures, overview, price, amount,thumbnail) VALUES ('$id','$course_title','$course_category','$lectures','$overview','$price','$amount','$thumbnail')");
 
-            if(move_uploaded_file($tmpFilePath,$newFilePath))
-            {
-                array_push($video_link,$newFilePath);
-            }
+        if($result){
+    //         $run = mysqli_query($conn,"SELECT * FROM `courses` WHERE teacher_='$teacher_email'");
+    //         $row = mysqli_fetch_assoc($run);
+    //   $_SESSION['course_id'] =$course_id;
+     header("Location:courses.php?course_added=true");
+
         }
     }
 
-    $video_name=implode(",",$video_link);
-    $flag=0;
-    if(move_uploaded_file($_FILES['doc']['tmp_name'],$target))
-    {
-
-        $result=mysqli_query($conn,"INSERT INTO courses (course_title, course_category, course_duration, lectures, overview, price, amount,thumbnail, name) VALUES ('$course_title','$course_category','$course_duration','$lectures','$overview','$price','$amount','$thumbnail','$video_name')");
-    
-
-        if($result)
-        {
-            $success= "Your course successfully uploaded";
-        }
-        else
-        {
-            $failed="Your course Not uploaded";
-        }
-    }
+   
 }
 
         
 ?>
 
+
 <div class="col-lg-9 col-md-9 col-sm-12">
 
+                       <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="courses.php">courses</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Add Course</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
             <div class="dashboard_container">
                 <div class="dashboard_container_header">
                     <div class="dashboard_fl_1 text-center">
-                        <h3>Setup Your Details</h3>
+                        <h3>Add your course details</h3>
                     </div>
                 </div>
                 <div class="dashboard_container_body p-4">
@@ -83,40 +73,36 @@ if (isset($_POST['upload']))
 
 
                                 <div class="col-lg-8 col-md-7">
-                                    <!-- <form action="javascript:sendmail()" method="POST"> -->
 
                                     <div class="prc_wrap">
-                                        <!-- <form action="javascript:sendmail()" method="POST"> -->
                                         <div class="prc_wrap_header">
                                             <h4 class="property_block_title">Fillup The Form</h4>
                                         </div>
-                                        <!-- <form action="javascript:sendmail()" method="POST"> -->
                                         <div class="prc_wrap-body">
-                                            <form action="course.php" method="POST" enctype="multipart/form-data"
+                                            <form action="" method="POST" enctype="multipart/form-data"
                                                 onsubmit="return validation()">
-                                                <!-- <div class="row">
-																		<div class="col-lg-6 col-md-12">
-																			<div class="form-group">
-																				<label>Course Title</label>
-																				<input type="text" class="form-control simple" id="Name">
-																			</div>
-																		</div>
-																		
-																	</div> -->
-
+                                               
                                                 <div class="form-group">
                                                     <label>Course Title</label>
                                                     <input type="text" class="form-control simple" name="course_title"
                                                         id="ctitle" required>
                                                 </div>
-
-
-                                                <div class="form-group">
-                                                    <label>Course Duration</label>
-                                                    <input type="text" class="form-control simple"
-                                                        name="course_duration" id="coursed" required>
-
-                                                </div>
+                                                <div class="row">
+                                             
+                                                            <div class="form-group container" id="amount" >
+                                                                    <label>Course Category</label>
+                                                                    <select type="text" name="course_category" class="form-control simple px-auto" style="height:56px;"onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1;this.blur();'>
+                                                                    <?php
+                                                                     $result = mysqli_query($conn, "SELECT * FROM categories "); 
+                                                                    //  $res = mysqli_fetch_array($result);
+										                         	 while($row=mysqli_fetch_assoc($result)){
+                                                                    ?>
+                                                                    <option value="<?php echo $row['id']?>"><?php  echo $row['category_name']?></option>
+                                                                   
+                                                                    <?php }?>
+                                                                    </select>
+                                                                    </div>   
+                                                            </div>  
                                                 <div class="form-group">
                                                     <div class="form-group">
                                                         <label>No.of Lectures</label>
@@ -127,28 +113,29 @@ if (isset($_POST['upload']))
 
                                                 <div class="form-group">
                                                     <label>Course Overview</label>
-                                                    <input type="text" class="form-control simple" name="overview"
-                                                        id="coverview" required>
+                                                    <textarea type="text" class="form-control simple" name="overview"
+                                                        id="coverview" required></textarea>
                                                 </div>
                                                 <div class="row">
 
-                                                    <div class=" form-group container">
+                                                <div class=" form-group container">
                                                         <label>Course Price</label>
 
 
-                                                        <select type="text" id="mySelect" name="price"
-                                                            onchange="toggle()" class="form-control simple px-auto">
+                                                        <select type="text" id="seeAnotherField" name="price"
+                                                            class="form-control simple px-auto">
 
+                                                            <option value="free">Free</option>
                                                             <option value="Paid">Paid</option>
-                                                            <option value="0">Free</option>
                                                         </select>
 
 
                                                     </div>
-                                                    <div class="form-group container" id="amount">
+                                                    <div class="form-group container" id="otherFieldDiv">
                                                         <label> Amount</label>
                                                         <select type="text" name="amount"
                                                             class="form-control simple px-auto">
+                                                            <option type =" hidden" value="0">0</option>
                                                             <option value="100">100</option>
                                                             <option value="200">200</option>
                                                             <option value="300">300</option>
@@ -163,14 +150,6 @@ if (isset($_POST['upload']))
                                                         </select>
                                                     </div>
 
-
-
-
-                                                    <!-- <div class="form-group ml-3">
-                                                                    <button class="btn btn-theme"
-                                                                        type="submit">Free</button>
-                                                                </div> -->
-
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Add Thumbnail</label>
@@ -181,42 +160,9 @@ if (isset($_POST['upload']))
                                                     </div>
                                                 </div>
 
-                                                <div class=" form-group container text-center">
-                                                    <label><b>Upload Courses here</b><label>
-
-
-                                                </div>
-
-                                                <div class="input-group mb-3">
-
-                                                    <input type="file" class="form-control" name="file[]" multiple
-                                                        id="inputGroupFile02" required>
-
-                                                </div>
-                                                <?php if(isset($success)) { ?>
-                                                <div class="alert alert-success">
-
-
-
-                                                    <?php echo $success;?>
-
-                                                </div>
-                                                <?php } ?>
-                                                <?php if(isset($failed)) { ?>
-                                                <div class="alert alert-danger">
-
-
-
-                                                    <?php echo $failed;?>
-
-                                                </div>
-                                                <?php } ?>
-
-
-
                                                 <div class="form-group text-center">
                                                     <button class="btn btn-theme " type="submit" name="upload"
-                                                        for="inputGroupFile02">Upload</button>
+                                                        for="inputGroupFile02">Submit</button>
 
                                                 </div>
 
@@ -236,29 +182,13 @@ if (isset($_POST['upload']))
                     </section>
                     </section>
 
-                    <!-- ============================ Dashboard: My Order Start End ================================== -->
-
-                    <!-- ============================== Start Newsletter ================================== -->
-
-                    <!-- ================================= End Newsletter =============================== -->
-
-                    <!-- ============================ Footer Start ================================== -->
-
-                    <!-- ============================ Footer End ================================== -->
-
-                    <!-- Log In Modal -->
-
+                  
 
                     <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 
 
                 </div>
-
-                <!-- ============================================================== -->
-                <!-- End Wrapper -->
-                <!-- ============================================================== -->
-
-                <!-- ============================================================== -->
+               <!-- ============================================================== -->
                 <!-- All Jquery -->
                 <!-- ============================================================== -->
                 <script src="assets/js/jquery.min.js"></script>
@@ -277,22 +207,17 @@ if (isset($_POST['upload']))
                     $('#side-menu').metisMenu();
                 </script>
                 <script>
-                    function toggle() {
-                        var amount = document.getElementById('amount');
+                 $("#seeAnotherField").change(function() {
+  if ($(this).val() == "Paid") {
+    $('#otherFieldDiv').show();
+    $('#otherField').attr('required', '');
+    $('#otherField').attr('data-error', 'This field is required.');
+  } else {
+    $('#otherFieldDiv').hide();
+    $('#otherField').removeAttr('required');
+    $('#otherField').removeAttr('data-error');
+  }
+});
+$("#seeAnotherField").trigger("change");
 
-                        if (amount.style.display == 'none') {
-                            amount.style.display = 'block';
-                        } else {
-                            amount.style.display = 'none';
-                        }
-                    }
-
-                </script>
-
-
-
-
-
-
-
-                <!-- Mirrored from codeminifier.com/learnup-1.1/learnup/settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Sep 2020 06:38:45 GMT -->
+</script>

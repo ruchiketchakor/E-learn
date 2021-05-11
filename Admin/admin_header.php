@@ -19,7 +19,6 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from codeminifier.com/learnup-1.1/learnup/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Sep 2020 06:38:45 GMT -->
 
 <head>
     <meta charset="utf-8" />
@@ -56,7 +55,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <div class="container">
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
-                        <a class="nav-brand static-logo align-to-left p-0" href="index.php">
+                        <a class="nav-brand static-logo align-to-left p-0" href="dashboard.php">
                             <img src="assets/img/Elearn.png" class="logo" alt="" />
                         </a>
 
@@ -96,12 +95,12 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     <div class="d-navigation">
                         <ul id="side-menu">
                             <li class="<?= ($activePage == 'dashboard') ? 'active':''; ?>"><a href="dashboard.php"><i class="ti-user"></i>Dashboard</a></li>
-                            <li class="<?= ($activePage == 'details1') ? 'active':''; ?>" ><a href="details1.php"><i class="ti-settings"></i>Add Course </a></li>
+                            <li class="<?= ($activePage == 'courses') ? 'active':''; ?>" ><a href="courses.php"><i class="ti-settings"></i>Add Course </a></li>
                             <li class="<?= ($activePage == 'my-profile') ? 'active':''; ?>"><a href="my-profile.php"><i class="ti-heart"></i>My Profile</a> </li>
                             <li class="<?= ($activePage == 'all-courses') ? 'active':''; ?>"><a href="all-courses.php"><i class="ti-heart"></i>All Courses</a></li>
                             <li class="<?= ($activePage == 'enrolled_student') ? 'active':''; ?>"><a href="enrolled_student.php"><i class="ti-heart"></i>Enrolled Students</a></li>
                             <li class="<?= ($activePage == 'reviews') ? 'active':''; ?>"><a href="reviews.php"><i class="ti-heart"></i>Notifications</a></li>
-                            <li class="<?= ($activePage == 'contact') ? 'active':''; ?>"><a href="contact.php"><i class="ti-heart"></i>Contact</a></li>
+                            <li class="<?= ($activePage == 'teacher_contact') ? 'active':''; ?>"><a href="teacher_contact.php"><i class="ti-heart"></i>Contact</a></li>
                             <li><a href="admin-logout.php"><i class="ti-power-off"></i>Log Out</a></li>
                            
                         </ul>

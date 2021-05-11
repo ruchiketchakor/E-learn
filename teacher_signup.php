@@ -38,7 +38,7 @@ VALUES ('$teacher_name', '$teacher_email', '$teacher_desi', '$teacher_uni','$tea
  
  $html="<b>Hello</b>,<br><h2>".$teacher_name." Wants Approval for teacher admin panel!</h2>Please aprrove this teacher after varification. 
  <br> please login to system and check the ".$teacher_name."  detail.</b><br><br> Regards,<br>Elearn ";
-//  smtp_mailer( $teacher_email,'Teacher Approval',$html);
+//  smtp_mailer("sushmitachaudhari15@gmail.com",'Teacher Approval',$html);
 
  if($result){
 

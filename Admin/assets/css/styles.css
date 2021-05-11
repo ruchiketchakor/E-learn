@@ -5693,7 +5693,7 @@ ul.list_ed_detail2 li.tag-5 strong, ul.list_ed_detail2 li.tag-5 i {
     font-weight: 600;
 }
 /*---------- Video -------------*/
-/* .property_video {
+.property_video {
     position: relative;
 }
 .property_video:before {
@@ -5753,7 +5753,7 @@ ul.list_ed_detail2 li.tag-5 strong, ul.list_ed_detail2 li.tag-5 i {
     align-items: center;
     justify-content: center;
     background: rgba(255,255,255,1);
-} */
+}
 
 /*------------ Overview --------------*/
 .edu_wraper {
@@ -6229,7 +6229,7 @@ a.btn-br-more {
     overflow: hidden;
 }
 .course_overlay_cat .course_overlay_cat_thumb{
-    width: 100%;
+    width: 85%;
     padding: 0px;
     display: inline-block;
     height: 100%;
@@ -7052,7 +7052,7 @@ ul.lectures_lists li:last-child{
 .lectures_lists_title i{
     margin-right:5px;
 }
-ul.lectures_lists li:before {
+/* ul.lectures_lists li:before {
     content: "\e63d";
     width: 30px;
     height: 30px;
@@ -7065,7 +7065,8 @@ ul.lectures_lists li:before {
     align-items: center;
     justify-content: center;
     color: #4caf50;
-}
+} */
+
 ul.lectures_lists li.unview:before {
     content:"\e62b";
     width: 30px;
@@ -9157,11 +9158,7 @@ ul.cources_facts_list li {
     }
 }
   
-  
-  
-  
-
-    
+ 
   
   
   
