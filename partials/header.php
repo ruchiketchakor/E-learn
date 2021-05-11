@@ -42,7 +42,7 @@ session_start();
 		
             <!-- ============================================================== -->
             <!-- Top header  -->
-<div class="header header-transparent change-logo">
+<div class="header header-primary change-logo">
 				<div class="container">
 					<nav id="navigation" class="navigation navigation-landscape">
 						<div class="nav-header">
@@ -54,7 +54,7 @@ session_start();
 							</a>
 							<div class="nav-toggle"></div>
 						</div>
-						<div class="nav-menus-wrapper" style="transition-property: none;  font-size: large;">
+						<div class="nav-menus-wrapper" style="transition-property: none;  font-size: large; margin-top:20px">
 							<ul class="nav-menu">
 							
 								<li class="active"><a href="index.php">Home<span class="submenu-indicator"></span></a>

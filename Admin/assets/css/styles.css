@@ -4655,7 +4655,7 @@ ul.cources_facts_list li:after {
     padding: 0 20px 20px;
 }
 /*------------- Watching Videos ---------------*/
-/* .edu-watching {
+.edu-watching {
     position: relative;
     width: 100%;
     display: block;
@@ -4708,7 +4708,7 @@ ul.cources_facts_list li:after {
     justify-content: center;
     height: 32px;
     line-height: 0;
-} */
+}
 /*--------------------- Trips Design ----------------*/
 .trips_top {
     position: relative;
