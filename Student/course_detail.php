@@ -197,31 +197,11 @@ include '../partials/header.php'
 											<h4 class="edu_title">Course Overview</h4>
 											<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>		
 											<p>Aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto. Sam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-											<h6>Requirements</h6>
-											<ul class="lists-3">
-												<li>At vero eos et accusamus et iusto odio dignissimos ducimus</li>
-												<li>At vero eos et accusamus et iusto odio dignissimos ducimus</li>
-												<li>At vero eos et accusamus et iusto odio dignissimos ducimus</li>
-												<li>At vero eos et accusamus et iusto odio dignissimos ducimus</li>
-												<li>At vero eos et accusamus et iusto odio dignissimos ducimus</li>
-											</ul>
+											
 										</div>
 										
-										<!-- Overview -->
-										<div class="edu_wraper">
-											<h4 class="edu_title">What you'll learn</h4>
-											<ul class="edu_list third">
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-												<li>At vero eos et accusamus</li>
-											</ul>
-										</div>
+										
+										
 									</div>
 									
 									<!-- Curriculum Detail -->
@@ -313,14 +293,14 @@ include '../partials/header.php'
 										
 										<!-- Overall Reviews -->
 										<div class="rating-overview">
-											<div class="rating-overview-box">
+											<!-- <div class="rating-overview-box">
 												<span class="rating-overview-box-total">4.2</span>
 												<span class="rating-overview-box-percent">out of 5.0</span>
 												<div class="star-rating" data-rating="5"><i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i><i class="ti-star"></i>
 												</div>
-											</div>
+											</div> -->
 
-											<div class="rating-bars">
+											<!-- <div class="rating-bars">
 												<div class="rating-bars-item">
 													<span class="rating-bars-name">5 Star</span>
 													<span class="rating-bars-inner">
@@ -329,8 +309,8 @@ include '../partials/header.php'
 														</span>
 														<strong>85%</strong>
 													</span>
-												</div>
-												<div class="rating-bars-item">
+												</div> -->
+												<!-- <div class="rating-bars-item">
 													<span class="rating-bars-name">4 Star</span>
 													<span class="rating-bars-inner">
 														<span class="rating-bars-rating good" data-rating="3.9">
@@ -357,71 +337,71 @@ include '../partials/header.php'
 														<strong>20%</strong>
 													</span>
 												</div>
-											</div>
+											</div> -->
 										</div>
 							
 										<!-- Reviews -->
 										<div class="list-single-main-item fl-wrap">
-											<div class="list-single-main-item-title fl-wrap">
+											<!-- <div class="list-single-main-item-title fl-wrap">
 												<h3>Item Reviews -  <span> 3 </span></h3>
-											</div>
+											</div> -->
 											<div class="reviews-comments-wrap">
 												<!-- reviews-comments-item -->  
 												<div class="reviews-comments-item">
-													<div class="review-comments-avatar">
+													<!-- <div class="review-comments-avatar">
 														<img src="assets/img/user-1.jpg" class="img-fluid" alt=""> 
-													</div>
+													</div> -->
 													<div class="reviews-comments-item-text">
 														<h4><a href="#">Josaph Manrty</a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i>27 Oct 2019</span></h4>
 														
-														<div class="listing-rating high" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><span class="review-count">4.9</span> </div>
+														<!-- <div class="listing-rating high" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><span class="review-count">4.9</span> </div> -->
 														<div class="clearfix"></div>
 														<p>" Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris. "</p>
-														<div class="pull-left reviews-reaction">
+														<!-- <div class="pull-left reviews-reaction">
 															<a href="#" class="comment-like active"><i class="ti-thumb-up"></i> 12</a>
 															<a href="#" class="comment-dislike active"><i class="ti-thumb-down"></i> 1</a>
 															<a href="#" class="comment-love active"><i class="ti-heart"></i> 07</a>
-														</div>
+														</div> -->
 													</div>
 												</div>
 												<!--reviews-comments-item end-->  
 												
 												<!-- reviews-comments-item -->  
 												<div class="reviews-comments-item">
-													<div class="review-comments-avatar">
+													<!-- <div class="review-comments-avatar">
 														<img src="assets/img/user-2.jpg" class="img-fluid" alt=""> 
-													</div>
+													</div> -->
 													<div class="reviews-comments-item-text">
 														<h4><a href="#">Rita Chawla</a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i>2 Nov May 2019</span></h4>
 														
-														<div class="listing-rating mid" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star"></i><span class="review-count">3.7</span> </div>
+														<!-- <div class="listing-rating mid" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star"></i><span class="review-count">3.7</span> </div> -->
 														<div class="clearfix"></div>
 														<p>" Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris. "</p>
-														<div class="pull-left reviews-reaction">
+														<!-- <div class="pull-left reviews-reaction">
 															<a href="#" class="comment-like active"><i class="ti-thumb-up"></i> 12</a>
 															<a href="#" class="comment-dislike active"><i class="ti-thumb-down"></i> 1</a>
 															<a href="#" class="comment-love active"><i class="ti-heart"></i> 07</a>
-														</div>
+														</div> -->
 													</div>
 												</div>
 												<!--reviews-comments-item end-->
 												
 												<!-- reviews-comments-item -->  
 												<div class="reviews-comments-item">
-													<div class="review-comments-avatar">
+													<!-- <div class="review-comments-avatar">
 														<img src="assets/img/user-3.jpg" class="img-fluid" alt=""> 
-													</div>
+													</div> -->
 													<div class="reviews-comments-item-text">
 														<h4><a href="#">Adam Wilsom</a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i>10 Nov 2019</span></h4>
 														
-														<div class="listing-rating good" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star"></i> <span class="review-count">4.2</span> </div>
+														<!-- <div class="listing-rating good" data-starrating2="5"><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star"></i> <span class="review-count">4.2</span> </div> -->
 														<div class="clearfix"></div>
 														<p>" Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris. "</p>
-														<div class="pull-left reviews-reaction">
+														<!-- <div class="pull-left reviews-reaction">
 															<a href="#" class="comment-like active"><i class="ti-thumb-up"></i> 12</a>
 															<a href="#" class="comment-dislike active"><i class="ti-thumb-down"></i> 1</a>
 															<a href="#" class="comment-love active"><i class="ti-heart"></i> 07</a>
-														</div>
+														</div> -->
 													</div>
 												</div>
 												<!--reviews-comments-item end-->
