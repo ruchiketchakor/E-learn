@@ -41,11 +41,11 @@ include './admin_header.php';
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="course_overlay_cat">
                         <div class="course_overlay_cat_thumb">
-                            <a href="add_video.php?id=<?php echo $row['id']?>" tabindex="0"><img src="assets/course_images/<?php echo  $row['thumbnail']?>" class="img-fluid" alt=""></a>
+                            <a href="add_video.php?id=<?php echo $row['cid']?>" tabindex="0"><img src="assets/course_images/<?php echo  $row['thumbnail']?>" class="img-fluid" alt=""></a>
                         </div>
                         <div class="course_overlay_cat_caption">
                             <div class="llp-left pb-1">
-                                <h4 class="text-white"> Course Id:<?php echo  $row['id']?></h4>
+                                <h4 class="text-white"> Course Id:<?php echo  $row['cid']?></h4>
                                 <span><?php echo  $row['course_title']?></span>
                             </div>
                         </div>

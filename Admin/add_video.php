@@ -75,7 +75,7 @@ if (isset($_POST['upload']))
                                                
                                               <?php
                                               $id=$_GET['id'];
-                                              $result=mysqli_query($conn,"SELECT * FROM courses WHERE id=$id");
+                                              $result=mysqli_query($conn,"SELECT * FROM courses WHERE cid=$id");
                                               $row=mysqli_fetch_assoc($result)
                                               ?>
                                                 <div class="row">

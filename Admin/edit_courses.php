@@ -20,14 +20,14 @@ if (isset($_POST['update']))
 if($thumbnail != "")
 {
 
-    $query=mysqli_query($conn, "SELECT * FROM courses WHERE id=$course_id");
+    $query=mysqli_query($conn, "SELECT * FROM courses WHERE cid=$course_id");
     $row=mysqli_fetch_array($query);
     $image=$row['thumbnail'];
      unlink("assets/course_images/".$image);
       
 $target="assets/course_images/". $thumbnail;
 if( move_uploaded_file($_FILES['doc']['tmp_name'],$target)){
-$result = mysqli_query($conn, "UPDATE `courses` SET  `course_title`='$course_title', `course_title`='$course_title', `lectures`='$lectures',`overview`='$overview',`price`='$price',`amount`='$amount',`thumbnail`='$thumbnail'  where id='$course_id'");       
+$result = mysqli_query($conn, "UPDATE `courses` SET  `course_title`='$course_title', `course_title`='$course_title', `lectures`='$lectures',`overview`='$overview',`price`='$price',`amount`='$amount',`thumbnail`='$thumbnail'  where cid='$course_id'");       
 if($result){
     header("Location:all-courses.php?course=updated");
 }
@@ -35,7 +35,7 @@ if($result){
 }
 }
 else{
-$result = mysqli_query($conn, "UPDATE `courses` SET   `course_title`='$course_title', `lectures`='$lectures',`overview`='$overview',`price`='$price',`amount`='$amount' where id='$course_id'");       
+$result = mysqli_query($conn, "UPDATE `courses` SET   `course_title`='$course_title', `lectures`='$lectures',`overview`='$overview',`price`='$price',`amount`='$amount' where cid='$course_id'");       
 if($result){
     header("Location:all-courses.php?course=updated");
     // exit();
@@ -96,7 +96,7 @@ if($result){
 
                                                         <?php
                                                          $course_id= $_GET['id'];
-                                                         $result = mysqli_query($conn, "SELECT * FROM courses WHERE id=$course_id"); 
+                                                         $result = mysqli_query($conn, "SELECT * FROM courses WHERE cid=$course_id"); 
                                                          $res = mysqli_fetch_array($result);
                                                         ?>
                                                             <div class="form-group">

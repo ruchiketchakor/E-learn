@@ -7,7 +7,8 @@
 	 FROM courses
 	 JOIN teachers ON courses.teacher_id = teachers.id
 	 JOIN videos ON videos.course_id = courses.cid
-	 JOIN categories ON categories.id = courses.course_category");
+	 JOIN categories ON categories.id = courses.course_category
+	 where courses.teacher_id=$id");
 	 $row=mysqli_fetch_assoc($result);
 ?>
 <div class="col-lg-9 col-md-9 col-sm-12">

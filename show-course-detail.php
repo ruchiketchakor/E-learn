@@ -1,19 +1,24 @@
 
-		<?php include 'partials/header.php';?>
+<?php include 'partials/header.php';?>
 
 		<?php
-include 'partials/db_connect.php';
-
-	 $result=mysqli_query($conn,"SELECT courses.*, teachers.* ,videos.*, categories.*
+      include 'partials/db_connect.php';
+	  
+	  
+	  $id=$_GET['id'];
+	  
+	  $result=mysqli_query($conn,"SELECT courses.*, teachers.* ,videos.*, categories.*
 	 FROM courses
 	 JOIN teachers ON courses.teacher_id = teachers.id
 	 JOIN videos ON videos.course_id = courses.cid
-	 JOIN categories ON categories.id = courses.course_category");
+	 JOIN categories ON categories.id = courses.course_category
+	 where courses.cid=$id");
 	 $row=mysqli_fetch_assoc($result)
-?>
+	 ?>
+
 		<!-- ============================ Course Header Info Start================================== -->
-		<div class="image-cover ed_detail_head lg" style="background:#f4f4f4 url(assets/img/banner-4.jpg);"
-			data-overlay="8">
+	<div class="image-cover ed_detail_head lg" style="background:#f4f4f4 url(assets/img/banner-4.jpg);"
+		data-overlay="8">
 			<div class="pt-5 container">
 				<div class="row">
 
@@ -61,15 +66,15 @@ include 'partials/db_connect.php';
 							<div class="thumb">
 								<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
 								<div class="overlay_icon">
-									<div class="bb-video-box">
+									<!-- <div class="bb-video-box">
 										<div class="bb-video-box-inner">
 											<div class="bb-video-box-innerup">
-												<a href="Admin/assets/upload_video/<?php echo $row['video']?>"
+												<a href="Admin/assets/upload_video/"
 													data-toggle="modal" data-target="#popup-video" class="theme-cl"><i
 														class="ti-control-play"></i></a>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 
@@ -177,10 +182,11 @@ include 'partials/db_connect.php';
 									<div class="single_instructor">
 										<div class="single_instructor_thumb">
 										<?php $result=mysqli_query($conn,"SELECT courses.*, teachers.* ,videos.*
-	 FROM courses
-	 JOIN teachers ON courses.teacher_id = teachers.id
-	 JOIN videos ON videos.course_id = courses.cid");
-	 $row=mysqli_fetch_assoc($result) ?>
+											FROM courses
+											JOIN teachers ON courses.teacher_id = teachers.id
+											JOIN videos ON videos.course_id = courses.cid
+											where courses.cid=$id");
+											$row=mysqli_fetch_assoc($result) ?>
 											<a href="#"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="single_instructor_caption">
@@ -213,25 +219,26 @@ include 'partials/db_connect.php';
 						<!-- Course info -->
 						<div class="ed_view_box style_3">
 						<?php
-	 $result=mysqli_query($conn,"SELECT courses.*, teachers.* ,videos.*
-	 FROM courses
-	 JOIN teachers ON courses.teacher_id = teachers.id
-	 JOIN videos ON videos.course_id = courses.cid");
-	 $row=mysqli_fetch_assoc($result)
-?>
+											$result=mysqli_query($conn,"SELECT courses.*, teachers.* ,videos.*
+											FROM courses
+											JOIN teachers ON courses.teacher_id = teachers.id
+											JOIN videos ON videos.course_id = courses.cid
+											where courses.cid=$id");
+											$row=mysqli_fetch_assoc($result)
+										?>
 							<div class="property_video sm">
 								<div class="thumb">
 									<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
 									<div class="overlay_icon">
-										<div class="bb-video-box">
+										<!-- <div class="bb-video-box">
 											<div class="bb-video-box-inner">
 												<div class="bb-video-box-innerup">
-													<a href="Admin/assets/upload_video/<?php echo $row['video']?>"
+													<a href="Admin/assets/upload_video/"
 														data-toggle="modal" data-target="#popup-video"
 														class="theme-cl"><i class="ti-control-play"></i></a>
 												</div>
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>
@@ -248,11 +255,25 @@ include 'partials/db_connect.php';
 
 						
 							<div class="ed_view_link">
+							<?php
+							 $sid=$_SESSION['userid'];
+							 $cid=$_GET['id'];
+								$query=mysqli_query($conn,"SELECT * FROM `course-enroll` Where stud_id=$sid AND course_id=$cid");
+								$numrow = mysqli_num_rows($query);
+							?>
+
 							<?php if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']==true){
+								
+								if($numrow==1) {
 								echo'
-								<a href="#"   data-toggle="modal" data-target="#enroll" class="btn btn-theme enroll-btn">Enroll Now<i
+								<a href="course_play.php?cid='.$cid.'"  class="btn btn-theme enroll-btn">Start Course<i
 										class="ti-angle-right"></i></a>';
 									}
+									else{
+										echo '<a href="#"   data-toggle="modal" data-target="#enroll" class="btn btn-theme enroll-btn">Enroll Now<i
+										class="ti-angle-right"></i></a>';
+									}
+								}
 							else{
 								echo'
 	  
@@ -281,14 +302,16 @@ include 'partials/db_connect.php';
 						<div class="modal-body" style="padding: 4rem 2rem;">
 							<!-- <h4 class="modal-header-title">Log In</h4> -->
 							<div class="login-form">
-								<form method="post" action="index.php">
+								<form method="post" action="enrollstud.php?courseid=<?php echo $row['cid']?>" >
 								<div class="form-group">
 
 									<h4>Do you want to enroll this course?</h4>
 								</div>
-									
+		
 									<div class="form-group text-center">
-										<button  class="btn btn-theme enroll-btn">Enroll</button>
+									 <button  type="submit"  name ="enroll" class="btn btn-theme enroll-btn ">Enroll</button>
+										<!-- <button  onclick="showDetails('');"  name="enroll" class="btn btn-theme enroll-btn enroll">Enroll</button> -->
+
 									</div>
 								
 								</form>
@@ -306,7 +329,6 @@ include 'partials/db_connect.php';
 						<div class="modal-body" style="padding: 4rem 2rem;">
 							<!-- <h4 class="modal-header-title">Log In</h4> -->
 							<div class="login-form">
-								<form method="post" action="index.php">
 								<div class="form-group">
 
 									<h4>To enroll course Kindly Login!</h4>
@@ -316,7 +338,6 @@ include 'partials/db_connect.php';
 										<button  class="btn btn-theme enroll-btn">Login</button>
 									</div>
 								
-								</form>
 							</div>
 			
 						</div>
@@ -357,7 +378,10 @@ include 'partials/db_connect.php';
 	<!-- This page plugins -->
 	<!-- ============================================================== -->
 
+
+
 </body>
+
 
 <!-- Mirrored from codeminifier.com/learnup-1.1/learnup/detail-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Sep 2020 06:38:36 GMT -->
 

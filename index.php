@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         if( $row['otp']==$row['user_otp']){
        session_start();
        $_SESSION['loggedin'] = true;
-       $_SESSION['id'] = $row['id'];
+       $_SESSION['userid'] = $row['id'];
        $_SESSION['username'] = $row['user_name'];
        $_SESSION['useremail'] = $useremail;
 	   echo "logged in" .$username; 
@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		
 			<!-- ============================ Hero Banner  Start================================== -->
 			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/bg3.jpg);   background-position: center;
-" data-overlay="0">
+           " data-overlay="0">
 				<div class="container">
 					<!-- Type -->
 					<div class="row align-items-center">
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
              }
            ?>
 
-      <?php 
+        <?php 
              if(isset($_GET['loginsuccess']) && $_GET['loginsuccess']=="false"){
               echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert" style="
               margin-top: 140px;    text-align: center;
@@ -212,131 +212,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					</div>
 					
 					<div class="row">
+						<?php 
+						
+	                  $sql = mysqli_query($conn,"SELECT * FROM `categories`");
+					  
+					  while($run = mysqli_fetch_assoc($sql)){
+
+					
+						?>
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="edu_cat_2 cat-1">
 								<div class="edu_cat_icons">
 									<a class="pic-main" href="#"><img src="assets/img/content.png" class="img-fluid" alt="" /></a>
 								</div>
 								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Web Development</a></h4>
+									<h4 class="title"><a href="course_show.php?id=<?php echo $run['id']?>"><?php echo $run['category_name']?></a></h4>
 									<ul class="meta">
 										<li class="video"><i class="ti-video-clapper"></i>23 Classes</li>
 									</ul>
 								</div>
 							</div>							
 						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-2">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/briefcase.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Android Development</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>58 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-3">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/career.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Digital Marketing</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>74 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-4">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/python.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Artificial Intelligence</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>65 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-10">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/designer.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Machine Learning</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>43 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-6">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/speaker.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Programming</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>82 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-7">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/photo.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Programming</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>25 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-8">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/yoga.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Course Detail</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>43 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="edu_cat_2 cat-9">
-								<div class="edu_cat_icons">
-									<a class="pic-main" href="#"><img src="assets/img/health.png" class="img-fluid" alt="" /></a>
-								</div>
-								<div class="edu_cat_data">
-									<h4 class="title"><a href="#">Lifestyle</a></h4>
-									<ul class="meta">
-										<li class="video"><i class="ti-video-clapper"></i>38 Classes</li>
-									</ul>
-								</div>
-							</div>							
-						</div>
+						<?php } ?>
+					
 					</div>
 					
 				</div>
@@ -359,196 +257,39 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					<div class="row">
 						
 						<!-- Cource Grid 1 -->
+						<?php 
+						 $query=mysqli_query($conn,"SELECT courses.*, teachers.* 
+						 FROM courses 
+						 JOIN teachers ON courses.teacher_id = teachers.id ");
+					
+						while($run = mysqli_fetch_assoc($query)){
+  
+						  ?>
 						<div class="col-lg-4 col-md-6">
 							<div class="education_block_grid style_2">
 								
 								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-1.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$520</div>
+									<a href="show-course-detail.php?id=<?php echo $run['cid']?>"><img src="Admin/assets/course_images/<?php echo $run['thumbnail']?>" class="img-fluid" alt=""></a>
+									<div class="cources_price">Rs <?php echo $run['amount']?></div>
 								</div>
 								
 								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">Tableau For Beginners: Get CA Certified, Grow Your Career</a></h4>
+									<h4 class="bl-title"><a href="show-course-detail.php?id=<?php echo $run['cid']?>"><?php echo $run['course_title']?></a></h4>
 								</div>
 								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>8682 Views</li>
-										<li><i class="ti-time mr-2"></i>6h 40min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.7 Reviews</li>
-									</ul>
-								</div>
-								 -->
+							
 								<div class="education_block_footer">
 									<div class="education_block_author">
 										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-1.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Robert Wilson</a></h5>
+										<h5><a href="instructor-detail.html"><?php echo $run['name']?></a></h5>
 									</div>
 									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>54 lectures</div>
 								</div>
 								
 							</div>	
 						</div>
-						
+						<?php } ?>
 						<!-- Cource Grid 1 -->
-						<div class="col-lg-4 col-md-6">
-							<div class="education_block_grid style_2">
-								
-								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-2.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$349</div>
-								</div>
-								
-								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">The Complete Business Plan Course (Includes 50 Templates)</a></h4>
-								</div>
-								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>9882 Views</li>
-										<li><i class="ti-time mr-2"></i>6h 30min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.7 Reviews</li>
-									</ul>
-								</div> -->
-								
-								<div class="education_block_footer">
-									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-2.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Shruti Hasan</a></h5>
-									</div>
-									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>26 lectures</div>
-								</div>
-								
-							</div>	
-						</div>
-						
-						<!-- Cource Grid 1 -->
-						<div class="col-lg-4 col-md-6">
-							<div class="education_block_grid style_2">
-								
-								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-3.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$545</div>
-								</div>
-								
-								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">An Entire MBA In 1 Course:Award Winning Business School Prof</a></h4>
-								</div>
-								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>5893 Views</li>
-										<li><i class="ti-time mr-2"></i>5h 15min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.7 Reviews</li>
-									</ul>
-								</div> -->
-								
-								<div class="education_block_footer">
-									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-3.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Adam Viknoi</a></h5>
-									</div>
-									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>52 lectures</div>
-								</div>
-								
-							</div>	
-						</div>
-						
-						<!-- Cource Grid 1 -->
-						<div class="col-lg-4 col-md-6">
-							<div class="education_block_grid style_2">
-								
-								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-4.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$420</div>
-								</div>
-								
-								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">The Complete Financial Analyst Course 2020</a></h4>
-								</div>
-								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>8582 Views</li>
-										<li><i class="ti-time mr-2"></i>4h 59min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.6 Reviews</li>
-									</ul>
-								</div> -->
-								
-								<div class="education_block_footer">
-									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-4.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Shilpa Shekh</a></h5>
-									</div>
-									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>43 lectures</div>
-								</div>
-								
-							</div>	
-						</div>
-						
-						<!-- Cource Grid 1 -->
-						<div class="col-lg-4 col-md-6">
-							<div class="education_block_grid style_2">
-								
-								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-5.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$429</div>
-								</div>
-								
-								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">PMP Exam Prep Seminar - PMBOK Guide 6</a></h4>
-								</div>
-								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>9857 Views</li>
-										<li><i class="ti-time mr-2"></i>7h 45min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.9 Reviews</li>
-									</ul>
-								</div> -->
-								
-								<div class="education_block_footer">
-									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-5.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Shaurya Preet</a></h5>
-									</div>
-									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>32 lectures</div>
-								</div>
-								
-							</div>	
-						</div>
-						
-						<!-- Cource Grid 1 -->
-						<div class="col-lg-4 col-md-6">
-							<div class="education_block_grid style_2">
-								
-								<div class="education_block_thumb n-shadow">
-									<a href="course-detail.html"><img src="assets/img/co-6.jpg" class="img-fluid" alt=""></a>
-									<div class="cources_price">$249</div>
-								</div>
-								
-								<div class="education_block_body">
-									<h4 class="bl-title"><a href="course-detail.html">Tableau 2020 A-Z:Hands-On Tableau Training For Data Science!</a></h4>
-								</div>
-								
-								<!-- <div class="cources_info_style3">
-									<ul>
-										<li><i class="ti-eye mr-2"></i>6852 Views</li>
-										<li><i class="ti-time mr-2"></i>2h 30min</li>
-										<li><i class="ti-star text-warning mr-2"></i>4.8 Reviews</li>
-									</ul>
-								</div> -->
-								
-								<div class="education_block_footer">
-									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-6.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html">Preeti Bhartiya</a></h5>
-									</div>
-									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>48 lectures</div>
-								</div>
-								
-							</div>	
-						</div>
 						
 					</div>
 					
