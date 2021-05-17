@@ -27,6 +27,12 @@ session_start();
 		
 		
     </head>
+	<style>
+		.navigation-portrait .submenu-indicator.submenu-indicator-up
+		{
+			right:-26px;
+		}
+	</style>
 	
     <body class="red-skin">
 	
@@ -89,8 +95,15 @@ session_start();
 								<li class="login_click " style="margin-right:-10px;">
 								<img src="assets/img/user.jpg" class="logo img-fluid rounded-circle" width="40px" alt="" />
 							</li>
-								<li class="login_click light">
-								<a> ' .$_SESSION['username'].'</a>
+							<li>
+							<a> ' .$_SESSION['username'].'<span class="submenu-indicator"></span></a>
+							<ul class="nav-dropdown nav-submenu">
+							<li><a href="myprofile.php">My Profile<span class="submenu-indicator"></span></a></li>
+							<li><a href="#">My Courses<span class="submenu-indicator"></span></a></li>
+							<li><a href="help.php">Help Center<span class="submenu-indicator"></span></a></li>
+							<li><a href="partials/_logout.php">Logout<span class="submenu-indicator"></span></a></li>
+
+							</ul>
 							</li>
 							<li class="login_click bg-green">
 								<a href="partials/_logout.php">Logout</a>

@@ -1,6 +1,59 @@
 <?php
- include 'header.php';
+ include 'partials/header.php';
 ?>
+<?php
+
+include 'partials/db_connect.php';
+
+  if(isset($_POST['submit']))
+  {
+    //   $id=$_SESSION['teacherid'];
+      $name=$_POST['name'];
+      $email=$_POST['email'];
+      $message=$_POST['message'];
+
+      $result=mysqli_query($conn,"INSERT INTO student_help (name,email,message) VALUES ('$name','$email','$message')");
+
+      $html="<b>Hello</b>,<br>Name= ".$name. " <br>Email= ".$email."<br>Message= ".$message." <br><br> Regards,<br>Elearn ";
+      smtp_mailer( 'sushmitachaudhari15@gmail.com','Student Contact',$html);
+  }
+
+  function smtp_mailer($to, $showError){
+    include('../partials/smtp/PHPMailerAutoload.php');
+    $mail=new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host="smtp.gmail.com";
+    $mail->Port=587;
+    $mail->SMTPSecure="tls";
+    $mail->SMTPAuth=true;
+    $mail->Username="joneymaske@gmail.com";
+    $mail->Password="joneymaske@1315";
+    $mail->SetFrom("joneymaske@gmail.com");
+    $mail->addAddress($to);
+    $mail->IsHTML(true);
+    // $mail->Subject=$subject;
+    $mail->Body=$showError;
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
+    if($mail->send()){
+        echo "Mail send";
+    }else{
+        echo "Error occur";
+    }
+    // echo $msg;
+}
+?>     
+
+<style>
+@media (min-width: 1024px){
+.page-title {
+    margin-top: 53px;
+}
+}
+</style>
 <section class="page-title p-0">
     <div class="container">
         <div class="row">
@@ -23,7 +76,7 @@
 <!-- ============================ Page Title End ================================== -->
 
 <!-- ============================ Agency List Start ================================== -->
-<section class="bg-light pt-4 pb-4">
+<section class="align-center" style="padding:1px 0 32px;">
 
     <div class="container">
 
@@ -42,17 +95,17 @@
                     </div>
                     <!-- <form action="javascript:sendmail()" method="POST"> -->
                     <div class="prc_wrap-body">
-                        <form action="javascript:sendmail()" method="POST">
-                            
+                        <!-- <form action="javascript:sendmail()" method="POST"> -->
+                         <form method="POST">   
                         
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" class="form-control simple" id="Name">
+                                        <input type="text" class="form-control simple" id="Name" name="name">
                                     </div>
                                 
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" class="form-control simple" id="Sender">
+                                        <input type="email" class="form-control simple" id="Sender" name="email">
                                     </div>
                                
                            
@@ -60,11 +113,11 @@
 
                             <div class="form-group">
                                 <label>Message</label>
-                                <textarea class="form-control simple" id="Message"></textarea>
+                                <textarea class="form-control simple" id="Message" name="message"></textarea>
                             </div>
 
                             <div class="form-group text-center">
-                                <button class="btn btn-theme " type="submit">Submit</button>
+                                <button class="btn btn-theme " type="submit" name="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -86,7 +139,7 @@
 			
 			<!-- ============================ Footer Start ================================== -->
 			<?php
- include 'footer.php';
+ include 'partials/footer.php';
 ?>
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 			
@@ -96,7 +149,7 @@
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
 </script>
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
 function sendmail() {
@@ -127,8 +180,8 @@ function sendmail() {
 
         });
 }
-</script>
-</script>
+</script> 
+</script>-->
 		<!-- ============================================================== -->
 		<!-- End Wrapper -->
 		<!-- ============================================================== -->
