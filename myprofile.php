@@ -1,10 +1,5 @@
 <?php
- include 'partials/header.php';
- include 'partials/db_connect.php';
-
-//  $id=$_SESSION['studentid'];
-//  $skill=$_SESSION['student_skill'];
-
+ include 'header.php';
 ?>
             <div class="image-cover hero_banner hero-inner-2" style="background-image:url(assets/img/bg1.jpg)" data-overlay="0">
 				<div class="container">
@@ -18,7 +13,7 @@
                             </div>
 
                             <div class="banner-search-2 transparent">
-								<h3 class="property_block_title"><?php echo $_SESSION['username'] ?></h3>
+								<h3 class="property_block_title">Pallavi Brahmankar</h3>
                                 <h4 class="property_block_title">Web Developer</h4>
                                 
 								<!-- <p>Study any topic, anytime. Choose from thousands of expert-led courses now.</p> -->
@@ -31,18 +26,14 @@
                             </div>
 						</div>
 						
-						<!-- <div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="flixio pt-5">
-                                <img class="img-fluid" src="assets/img/edu_1.png" alt="">
-                            </div>
-						</div> -->
+					
 						
 					</div>
 				</div>
 			</div>
+			<!-- ============================ Hero Banner End ================================== -->
 			
-			 
-			<?php include 'partials/footer.php';?>
+			<?php include 'footer.php';?>
 
 		
 			<!-- End Modal -->

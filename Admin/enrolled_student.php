@@ -10,7 +10,7 @@ include './admin_header.php';
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb">
 											<li class="breadcrumb-item"><a href="#">Home</a></li>
-											<li class="breadcrumb-item active" aria-current="page">My orders</li>
+											<li class="breadcrumb-item active" aria-current="page">Enroll Students</li>
 										</ol>
 									</nav>
 								</div>
@@ -23,7 +23,7 @@ include './admin_header.php';
 									<div class="dashboard_container">
 										<div class="dashboard_container_header">
 											<div class="dashboard_fl_1">
-												<h4>View Order</h4>
+												<h4>View Enroll Students</h4>
 											</div>
 										</div>
 										<div class="dashboard_container_body">
@@ -31,86 +31,32 @@ include './admin_header.php';
 												<table class="table">
 													<thead class="thead-dark">
 														<tr>
-															<th scope="col">Order</th>
-															<th scope="col">Date</th>
-															<th scope="col">Status</th>
-															<th scope="col">Total</th>
-															<th scope="col">Action</th>
+															<th scope="col">Id</th>
+															<th scope="col">Name</th>
+															<th scope="col">Email</th>
+															<th scope="col">course name</th>
+															<th scope="col">Course Category</th>
 														</tr>
 													</thead>
 													<tbody>
+													<?php 
+
+												 $result1=mysqli_query($conn,"SELECT `course-enroll`.*, courses.*, users.*,categories.*
+												 FROM `course-enroll`
+												 JOIN courses ON `course-enroll`.course_id = courses.cid
+												 JOIN users ON `course-enroll`.stud_id = users.id
+												 JOIN categories ON `courses`.course_category = categories.id order by users.id DESC");
+												  while($row1=mysqli_fetch_assoc($result1)){
+												?>
 														<tr>
-															<th scope="row">#0000149</th>
-															<td>02 July 2020</td>
-															<td><span class="payment_status inprogress">In Progress</span></td>
-															<td>$110.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
+															<th scope="row"><?php echo $row1['id']?></th>
+															<td><?php echo $row1['user_name']?></td>
+															<td><?php echo $row1['user_email']?></td>
+															<td><?php echo $row1['course_title']?></td>
+															<td><?php echo $row1['category_name']?></td>
 														</tr>
-														<tr>
-															<th scope="row">#0000150</th>
-															<td>04 July 2020</td>
-															<td><span class="payment_status complete">Completed</span></td>
-															<td>$119.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">#0000151</th>
-															<td>07 July 2020</td>
-															<td><span class="payment_status complete">Completed</span></td>
-															<td>$149.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">#0000152</th>
-															<td>10 July 2020</td>
-															<td><span class="payment_status pending">Pending Payment</span></td>
-															<td>$199.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">#0000153</th>
-															<td>21 July 2020</td>
-															<td><span class="payment_status hold">Oh Hold</span></td>
-															<td>$166.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
-														</tr>
-														<tr>
-															<th scope="row">#0000154</th>
-															<td>11 July 2020</td>
-															<td><span class="payment_status cancel">Cancel</span></td>
-															<td>$166.00</td>
-															<td>
-																<div class="dash_action_link">
-																	<a href="#" class="view">View</a>
-																	<a href="#" class="cancel">Cancel</a>
-																</div>	
-															</td>
-														</tr>
+														<?php }?>
+														
 													</tbody>
 												</table>
 											</div>

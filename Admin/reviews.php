@@ -3,6 +3,20 @@
 include './admin_header.php';
 ?>
 <?php
+if(isset($_POST['reply'])) {
+	$solution = $_POST['sol'];
+	$hiddenId = $_POST['hiddenId'];
+	
+	$sql= "UPDATE `queries` SET `solution` = '$solution' WHERE `queries`.`qid` ='$hiddenId'";
+	 $result = mysqli_query($conn, $sql);
+	 if($sql){
+
+		 header("Location:reviews.php?reply=true");
+	 }
+	
+}
+
+
 if(isset($_GET['qid'])) {
 	$id=$_GET['qid'];
 	$sql="DELETE FROM queries WHERE qid=$id";
@@ -23,6 +37,18 @@ if(isset($_GET['qid'])) {
 
 						<div class="col-lg-9 col-md-9 col-sm-12">
 							
+						<?php 
+             if(isset($_GET['reply']) && $_GET['reply']=="true"){
+              echo ' <div class="alert alert-success alert-dismissible fade show" role="alert" style="
+              margin-top: 140px;    text-align: center;
+              ">
+              <strong> Reply</strong> send!.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+             }
+           ?>
 							<!-- Row -->
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
@@ -52,7 +78,7 @@ if(isset($_GET['qid'])) {
 											$query=mysqli_query($conn,"SELECT queries.*, courses.* 
 											FROM courses 
 											JOIN queries ON courses.cid = queries.course_id ");
-									   
+									        $run = mysqli_fetch_assoc($query);
 										   while($row = mysqli_fetch_assoc($query)){
 					 
 											?>
@@ -64,10 +90,28 @@ if(isset($_GET['qid'])) {
 														<div class="clearfix"></div>
 														<p><?php echo $row['query']?></p>
 													
+
+														<?php  if(!empty($row['solution'])){?>
+													
+													<div class="reviews-comments-item-text pb-4">
+													<hr>
+														<h4><a href="#">Solution</a><span class="reviews-comments-item-date"></span></h4>
+														
+														<div class="clearfix"></div>
+														<p><?php echo $row['solution'];?></p>
+														
+													</div>
+												<?php }?>
+												
 														<button id="seeAnotherField" value="reply" onclick="replyQuery()" type="button" class="btn btn-outline-success" style="padding:6px 12px;">Reply</button>
 														<a href="reviews.php?qid=<?php echo $row['qid']?>"><button type="button" class="btn btn-outline-danger" style="padding:6px 12px;">Delete</button></a>  
 													</div>
-										<div id="otherFieldDiv" class="edu_wraper hide" >
+										
+
+											</div>
+											
+
+											<div id="otherFieldDiv" class="edu_wraper hide" >
 											<h4 class="edu_title text-white">Solution</h4>
 											<div class="review-form-box form-submit">
 												<form method="post">
@@ -80,25 +124,25 @@ if(isset($_GET['qid'])) {
 																<textarea class="form-control ht-140" name="sol" placeholder="Solution"></textarea>
 															</div>
 														</div>
-														
+														<input type="hidden" name="hiddenId" value="<?php echo $row['qid']?>">
 														<div class="col-lg-12 col-md-12 col-sm-12">
 															<div class="form-group">
 																<button type="submit" name="reply" class="btn btn-theme">Reply</button>
 															</div>
+															
 														</div>
 														
 													</div>
 												</form>
 											</div>
 										</div>
-
-											</div>
 										   <?php }?>
 											
 											
 												
 												
 										</div>
+										
 										
 									</div>
 								</div>

@@ -89,7 +89,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     <div class="d-user-avater">
                         <img src="assets/teacher_images/<?php echo $row['photo']?>" style="height:110px; width:110px;" class="img-fluid avater" alt="">
                         <h4><?php echo $row['name']?></h4>
-                        <span><?php echo $row['city'] .' , '. $row['state']?></span>
+                        <span><?php echo $row['designation'] .' , '. $row['department']?></span>
                     </div>
 
                     <div class="d-navigation">

@@ -97,316 +97,36 @@
 						
 							<div class="four_slide-dots articles arrow_middle">
 								
+							<?php 
+
+								 $result=mysqli_query($conn,"SELECT *  FROM teachers ");
+								  while($row=mysqli_fetch_assoc($result)){
+								
+								?>
 								<!-- Single Slide -->
 								<div class="singles_items">
 									<div class="instructor_wrap">
 										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-1.jpg" class="img-fluid" alt=""></a>
+											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Daniel Diwansker</a></h4>
-											<span>Web Designer</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
+											<h4><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h4>
+											<span><?php echo $row['department']?></span>
+											
 										</div>
 									</div>
 								</div>
+								<?php }?>
 								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-2.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Shilpa Singh</a></h4>
-											<span>Team Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
 								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-3.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Adam Wistom</a></h4>
-											<span>Sales Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-4.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Ragini Singh</a></h4>
-											<span>Business Executing</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Single Slide -->
-								<!-- <div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-5.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Daniel Wilson</a></h4>
-											<span>HR Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
 							
 							</div>
 						
 						</div>
 					</div>
 					
-				</div> -->
+				</div> 
 			</section>
-			<!-- ============================ Featured Instructor End ================================== -->
-			
-			<!-- ============================ Testimonial Start ================================== -->
-			<!-- <section style="background:url(assets/img/testimonial.png)">
-				<div class="container">
-				
-					<div class="row justify-content-center">
-						<div class="col-lg-5 col-md-6 col-sm-12">
-							<div class="sec-heading center">
-								<p>What People Say?</p>
-								<h2><span class="theme-cl">Reviews</span> By Our Success & Top Students</h2>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-12">
-							<div id="testimonials_style" class="slick-carousel-3 arrow_middle">
-								<div class="testimonial-detail">
-									<div class="client-detail-box">
-										<div class="pic">
-											<img src="assets/img/user-1.jpg" alt="">
-										</div>
-										<div class="client-detail">
-											<h3 class="testimonial-title">Adam Alloriam</h3>
-											<span class="post">Web Developer</span>
-										</div>
-									</div>
-									<p class="description">
-										" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facilis itaque minus non odio, quaerat ullam eligendi facilis itaque minus non odio, quaerat ullam unde  unde voluptatum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi. "
-									</p>
-								</div>
-
-								<div class="testimonial-detail">
-									<div class="client-detail-box">
-										<div class="pic">
-											<img src="assets/img/user-2.jpg" alt="">
-										</div>
-										<div class="client-detail">
-											<h3 class="testimonial-title">Illa Millia</h3>
-											<span class="post">Project Manager</span>
-										</div>
-									</div>
-									<p class="description">
-										" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facilis itaque minus non odio, quaerat ullam unde voluptatum eligendi facilis itaque minus non odio, quaerat ullam unde  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi."
-									</p>
-								</div>
-								
-								<div class="testimonial-detail">
-									<div class="client-detail-box">
-										<div class="pic">
-											<img src="assets/img/user-3.jpg" alt="">
-										</div>
-										<div class="client-detail">
-											<h3 class="testimonial-title">Rout Millance</h3>
-											<span class="post">Web Designer</span>
-										</div>
-									</div>
-									<p class="description">
-										" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facilis itaque minus non odio, quaerat ullam unde voluptatum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi."
-									</p>
-								</div>
-								
-								<div class="testimonial-detail">
-									<div class="client-detail-box">
-										<div class="pic">
-											<img src="assets/img/user-4.jpg" alt="">
-										</div>
-										<div class="client-detail">
-											<h3 class="testimonial-title">williamson</h3>
-											<span class="post">Web Developer</span>
-										</div>
-									</div>
-									<p class="description">
-										" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi eligendi facilis itaque minus non odio, quaerat ullam unde voluptatum eligendi facilis itaque minus non odio, quaerat ullam unde ? "
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			</section>	 -->
-			<!-- ============================ Testimonial End ================================== -->
-			
-			<!-- ============================== Start Newsletter ================================== -->
-			<!-- <section class="newsletter theme-bg inverse-theme">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-7 col-md-8 col-sm-12">
-							<div class="text-center">
-								<h2>Join Thousand of Happy Students!</h2>
-								<p>Subscribe our newsletter & get latest news and updation!</p>
-								<form class="sup-form">
-									<input type="email" class="form-control sigmup-me" placeholder="Your Email Address" required="required">
-									<input type="submit" class="btn btn-theme" value="Get Started">
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!-- ================================= End Newsletter =============================== -->
-			
-			<!-- ============================ Footer Start ================================== -->
-			<!-- <footer class="dark-footer skin-dark-footer">
-				<div>
-					<div class="container">
-						<div class="row">
-							
-							<div class="col-lg-3 col-md-3">
-								<div class="footer-widget">
-									<img src="assets/img/logo-light.png" class="img-footer" alt="" />
-									<div class="footer-add">
-										<p>4967  Sardis Sta, Victoria 8007, Montreal.</p>
-										<p>+1 246-345-0695</p>
-										<p>info@learnup.com</p>
-									</div>
-									
-								</div>
-							</div>		
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">Navigations</h4>
-									<ul class="footer-menu">
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="faq.html">FAQs Page</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="blog.html">Blog</a></li>
-									</ul>
-								</div>
-							</div>
-									
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">New Categories</h4>
-									<ul class="footer-menu">
-										<li><a href="#">Designing</a></li>
-										<li><a href="#">Nusiness</a></li>
-										<li><a href="#">Software</a></li>
-										<li><a href="#">WordPress</a></li>
-										<li><a href="#">PHP</a></li>
-									</ul>
-								</div>
-							</div>
-							
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">Help & Support</h4>
-									<ul class="footer-menu">
-										<li><a href="#">Documentation</a></li>
-										<li><a href="#">Live Chat</a></li>
-										<li><a href="#">Mail Us</a></li>
-										<li><a href="#">Privacy</a></li>
-										<li><a href="#">Faqs</a></li>
-									</ul>
-								</div>
-							</div>
-							
-							<div class="col-lg-3 col-md-12">
-								<div class="footer-widget">
-									<h4 class="widget-title">Download Apps</h4>
-									<a href="#" class="other-store-link">
-										<div class="other-store-app">
-											<div class="os-app-icon">
-												<i class="lni-playstore theme-cl"></i>
-											</div>
-											<div class="os-app-caps">
-												Google Play
-												<span>Get It Now</span>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="other-store-link">
-										<div class="other-store-app">
-											<div class="os-app-icon">
-												<i class="lni-apple theme-cl"></i>
-											</div>
-											<div class="os-app-caps">
-												App Store
-												<span>Now it Available</span>
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				
-				<div class="footer-bottom">
-					<div class="container">
-						<div class="row align-items-center">
-							
-							<div class="col-lg-6 col-md-6">
-								<p class="mb-0">© 2020 LearnUp. Designd By <a href="https://themezhub.com/">Themezhub</a>.</p>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 text-right">
-								<ul class="footer-bottom-social">
-									<li><a href="#"><i class="ti-facebook"></i></a></li>
-									<li><a href="#"><i class="ti-twitter"></i></a></li>
-									<li><a href="#"><i class="ti-instagram"></i></a></li>
-									<li><a href="#"><i class="ti-linkedin"></i></a></li>
-								</ul>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</footer> -->
 			<?php include 'partials/footer.php';?>
 			<!-- ============================ Footer End ================================== -->
 			

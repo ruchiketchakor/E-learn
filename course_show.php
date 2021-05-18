@@ -83,8 +83,8 @@
 									
 										<div class="education_block_footer">
 											<div class="education_block_author">
-												<div class="path-img"><a href="instructor-detail.html"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a></div>
-												<h5><a href="instructor-detail.php"><?php echo $row['name']?></a></h5>
+												<div class="path-img"><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a></div>
+												<h5><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h5>
 											</div>
 											<div class="cources_price_foot"> <?php if($row['amount']==0){
 																echo "Free";

@@ -3,7 +3,7 @@
 include './admin_header.php';
 ?>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-
+                   
                         <!-- Row -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
@@ -22,7 +22,7 @@ include './admin_header.php';
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="dashboard_stats_wrap widget-1">
                                     <div class="dashboard_stats_wrap_content">
-                                        <h4>607</h4> <span>Listings Included</span>
+                                        <h4>607</h4> <span>Total Courses</span>
                                     </div>
                                     <div class="dashboard_stats_wrap-icon"><i class="ti-location-pin"></i></div>
                                 </div>
@@ -31,7 +31,7 @@ include './admin_header.php';
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="dashboard_stats_wrap widget-2">
                                     <div class="dashboard_stats_wrap_content">
-                                        <h4>102</h4> <span>Listings Remaining</span>
+                                        <h4>102</h4> <span>Total Enroll Student </span>
                                     </div>
                                     <div class="dashboard_stats_wrap-icon"><i class="ti-pie-chart"></i></div>
                                 </div>
@@ -40,7 +40,7 @@ include './admin_header.php';
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="dashboard_stats_wrap widget-4">
                                     <div class="dashboard_stats_wrap_content">
-                                        <h4>70</h4> <span>Featured Included</span>
+                                        <h4>70</h4> <span>Total Notifications</span>
                                     </div>
                                     <div class="dashboard_stats_wrap-icon"><i class="ti-user"></i></div>
                                 </div>
@@ -123,53 +123,30 @@ include './admin_header.php';
                                         <h6>Notifications</h6>
                                     </div>
                                     <div class="ground-list ground-hover-list">
+
+                                    <?php 
+
+											$query=mysqli_query($conn,"SELECT queries.*, courses.* 
+											FROM courses 
+											JOIN queries ON courses.cid = queries.course_id ");
+									        $run = mysqli_fetch_assoc($query);
+										   while($row = mysqli_fetch_assoc($query)){
+                                           if(empty($row['solution'])){
+					                       
+											?>
                                         <div class="ground ground-list-single">
                                             <a href="#">
                                                 <div class="btn-circle-40 btn-success"><i class="ti-calendar"></i></div>
                                             </a>
 
                                             <div class="ground-content">
-                                                <h6><a href="#">Maryam Amiri</a></h6>
-                                                <small class="text-fade">Check New Admin Dashboard..</small>
-                                                <span class="small">Just Now</span>
+                                                <h6><a href="review.php"><?php echo $row['rname']?></a></h6>
+                                                <small class="text-fade font-weight-bold pb-2"><?php echo $row['remail']?></small>
+                                                <span class="small"><?php echo $row['query']?></span>
                                             </div>
                                         </div>
-
-                                        <div class="ground ground-list-single">
-                                            <a href="#">
-                                                <div class="btn-circle-40 btn-danger"><i class="ti-calendar"></i></div>
-                                            </a>
-
-                                            <div class="ground-content">
-                                                <h6><a href="#">Maryam Amiri</a></h6>
-                                                <small class="text-fade">You can Customize..</small>
-                                                <span class="small">02 Min Ago</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="ground ground-list-single">
-                                            <a href="#">
-                                                <div class="btn-circle-40 btn-info"><i class="ti-calendar"></i></div>
-                                            </a>
-
-                                            <div class="ground-content">
-                                                <h6><a href="#">Maryam Amiri</a></h6>
-                                                <small class="text-fade">Need Responsive Business Tem...</small>
-                                                <span class="small">10 Min Ago</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="ground ground-list-single">
-                                            <a href="#">
-                                                <div class="btn-circle-40 btn-warning"><i class="ti-calendar"></i></div>
-                                            </a>
-
-                                            <div class="ground-content">
-                                                <h6><a href="#">Maryam Amiri</a></h6>
-                                                <small class="text-fade">Next Meeting on Tuesday..</small>
-                                                <span class="small">15 Min Ago</span>
-                                            </div>
-                                        </div>
+                                       <?php } }?>
+                                       
 
                                     </div>
                                 </div>
@@ -178,89 +155,7 @@ include './admin_header.php';
                         </div>
                         <!-- /Row -->
 
-                        <!-- Row -->
-                        <!-- <div class="row">
-
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="dashboard_container">
-                                    <div class="dashboard_container_header">
-                                        <div class="dashboard_fl_1">
-                                            <h4>Recent Order</h4>
-                                        </div>
-                                    </div>
-                                    <div class="dashboard_container_body">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="thead-dark">
-                                                    <tr>
-                                                        <th scope="col">Order</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Total</th>
-                                                        <th scope="col">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">#0000149</th>
-                                                        <td>02 July 2020</td>
-                                                        <td><span class="payment_status inprogress">In Progress</span>
-                                                        </td>
-                                                        <td>$110.00</td>
-                                                        <td>
-                                                            <div class="dash_action_link">
-                                                                <a href="#" class="view">View</a>
-                                                                <a href="#" class="cancel">Cancel</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#0000150</th>
-                                                        <td>04 July 2020</td>
-                                                        <td><span class="payment_status complete">Completed</span></td>
-                                                        <td>$119.00</td>
-                                                        <td>
-                                                            <div class="dash_action_link">
-                                                                <a href="#" class="view">View</a>
-                                                                <a href="#" class="cancel">Cancel</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#0000151</th>
-                                                        <td>07 July 2020</td>
-                                                        <td><span class="payment_status complete">Completed</span></td>
-                                                        <td>$149.00</td>
-                                                        <td>
-                                                            <div class="dash_action_link">
-                                                                <a href="#" class="view">View</a>
-                                                                <a href="#" class="cancel">Cancel</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#0000152</th>
-                                                        <td>10 July 2020</td>
-                                                        <td><span class="payment_status pending">Pending Payment</span>
-                                                        </td>
-                                                        <td>$199.00</td>
-                                                        <td>
-                                                            <div class="dash_action_link">
-                                                                <a href="#" class="view">View</a>
-                                                                <a href="#" class="cancel">Cancel</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div> -->
-                        <!-- /Row -->
+                     
 
                     </div>
 

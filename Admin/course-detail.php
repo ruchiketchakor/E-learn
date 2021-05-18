@@ -267,6 +267,13 @@
 </div>
 </div>
 
+	<!-- Video Modal -->
+	<div class="modal fade" id="popup-video" tabindex="-1" role="dialog" aria-labelledby="popup-video" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<iframe class="embed-responsive-item" width="100%" height="480" src="assets/upload_video/<?php echo $row['video']?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+			<!-- End Video Modal -->
 <script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>

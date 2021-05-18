@@ -1,8 +1,35 @@
 <?php
   include './admin_header.php';
 ?>			
+<?php 
+if(isset($_GET['courseId'])) {
+	$id=$_GET['courseId'];
+	$query=mysqli_query($conn,"SELECT * FROM videos WHERE course_id=$id");
+	$row=mysqli_fetch_assoc($query);
+	$videoID=$row['vid'];
+	if($videoID){
+	$sql=mysqli_query($conn,"DELETE FROM courses WHERE cid=$id");
+	$run=mysqli_query($conn,"DELETE FROM videos WHERE vid=$videoID");
+
+	if($sql AND $run){
+	  header("Location:all-courses.php?courseDelete=true");
+	}
+   }
+	 }
+?>
 						<div class="col-lg-9 col-md-9 col-sm-12">
-							
+						<?php 
+             if(isset($_GET['courseDelete']) && $_GET['courseDelete']=="true"){
+              echo ' <div class="alert alert-success alert-dismissible fade show" role="alert" style="
+              margin-top: 140px;    text-align: center;
+              ">
+              <strong> Deleted</strong> Course Deleted!.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+             }
+           ?>
 							<!-- Row -->
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
@@ -26,19 +53,7 @@
 											<div class="dashboard_fl_1">
 											<h4>All Courses</h4>
 											</div>
-											<!-- <div class="dashboard_fl_2">
-												<ul class="mb0">
-													<li class="list-inline-item">
-														
-													</li>
-													<li class="list-inline-item">
-														<form class="form-inline my-2 my-lg-0">
-															<input class="form-control" type="search" placeholder="Search Courses" aria-label="Search">
-															<button class="btn my-2 my-sm-0" type="submit"><i class="ti-search"></i></button>
-														</form>
-													</li>
-												</ul>
-											</div> -->
+											
 										</div>
 										<div class="dashboard_container_body">
 											
@@ -99,8 +114,8 @@
                                                                         type="button" onclick="location.href='edit_courses.php?id=<?php echo $row['id']?>'">Edit</button>
 																
 														
-                                                                    <button class="btn btn-danger  p-2 mt-2" style="border-radius:2rem;"
-                                                                        type="button">Delete</button>
+                                                                   <a href="all-courses.php?courseId=<?php echo $row['cid']?>"> <button class="btn btn-danger  p-2 mt-2" style="border-radius:2rem;"
+                                                                        type="button">Delete</button></a>
 															</ul>
 														</div>
 													</div>

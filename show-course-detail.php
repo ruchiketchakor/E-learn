@@ -255,15 +255,13 @@
 
 						
 							<div class="ed_view_link">
-							<?php
-							 $sid=$_SESSION['userid'];
-							 $cid=$_GET['id'];
-								$query=mysqli_query($conn,"SELECT * FROM `course-enroll` Where stud_id=$sid AND course_id=$cid");
-								$numrow = mysqli_num_rows($query);
-							?>
+							
 
 							<?php if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']==true){
-								
+								$sid=$_SESSION['userid'];
+								$cid=$_GET['id'];
+								   $query=mysqli_query($conn,"SELECT * FROM `course-enroll` Where stud_id=$sid AND course_id=$cid");
+								   $numrow = mysqli_num_rows($query);
 								if($numrow==1) {
 								echo'
 								<a href="course_play.php?cid='.$cid.'"  class="btn btn-theme enroll-btn">Start Course<i
@@ -345,15 +343,7 @@
 				</div>
 			</div>
 		<!-- Video Modal -->
-		<div class="modal fade" id="popup-video" tabindex="-1" role="dialog" aria-labelledby="popup-video"
-			aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<iframe class="embed-responsive-item" width="100%" height="480"
-					src="Admin/assets/upload_video/<?php echo $row['video']?>" frameborder="0"
-					allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div>
-		</div>
-		<!-- End Video Modal -->
+	
 
 		<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 

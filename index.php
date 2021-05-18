@@ -280,8 +280,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							
 								<div class="education_block_footer">
 									<div class="education_block_author">
-										<div class="path-img"><a href="instructor-detail.html"><img src="assets/img/user-1.jpg" class="img-fluid" alt=""></a></div>
-										<h5><a href="instructor-detail.html"><?php echo $run['name']?></a></h5>
+										<div class="path-img"><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="assets/img/user-1.jpg" class="img-fluid" alt=""></a></div>
+										<h5><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $run['name']?></a></h5>
 									</div>
 									<div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>54 lectures</div>
 								</div>
@@ -353,100 +353,34 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						
 							<div class="four_slide-dots articles arrow_middle">
 								
+							<?php 
+
+								 $result=mysqli_query($conn,"SELECT *  FROM teachers ");
+								  while($row=mysqli_fetch_assoc($result)){
+								
+								?>
 								<!-- Single Slide -->
 								<div class="singles_items">
 									<div class="instructor_wrap">
 										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-1.jpg" class="img-fluid" alt=""></a>
+											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Daniel Diwansker</a></h4>
-											<span>Web Designer</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
+											<h4><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h4>
+											<span><?php echo $row['department']?></span>
+											
 										</div>
 									</div>
 								</div>
+								<?php }?>
 								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-2.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Shilpa Singh</a></h4>
-											<span>Team Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
 								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-3.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Adam Wistom</a></h4>
-											<span>Sales Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Single Slide -->
-								<div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-4.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Ragini Singh</a></h4>
-											<span>Business Executing</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Single Slide -->
-								<!-- <div class="singles_items">
-									<div class="instructor_wrap">
-										<div class="instructor_thumb">
-											<a href="instructor-detail.html"><img src="assets/img/user-5.jpg" class="img-fluid" alt=""></a>
-										</div>
-										<div class="instructor_caption">
-											<h4><a href="instructor-detail.html">Daniel Wilson</a></h4>
-											<span>HR Manager</span>
-											<ul>
-												<li><a href="#" class="cl-fb"><i class="ti-facebook"></i></a></li>
-												<li><a href="#" class="cl-twitter"><i class="ti-twitter"></i></a></li>
-												<li><a href="#" class="cl-linked"><i class="ti-linkedin"></i></a></li>
-											</ul>
-										</div> -->
-									<!-- </div>
-								</div>
-							 -->
+							
 							</div>
 						
 						</div>
 					</div>
+					
 					
 				</div>
 			</section>

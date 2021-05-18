@@ -1,159 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-	
-<!-- Mirrored from codeminifier.com/learnup-1.1/learnup/instructor-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Sep 2020 06:38:51 GMT -->
-<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="www.frebsite.nl" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		
-        <title>LearnUp - Online Course & Education HTML Template</title>
-		 
-        <!-- Custom CSS -->
-        <link href="assets/css/styles.css" rel="stylesheet">
-		
-		<!-- Custom Color Option -->
-		<link href="assets/css/colors.css" rel="stylesheet">
-		
-    </head>
-	
-    <body class="red-skin">
-	
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
-		
-		
-        <!-- ============================================================== -->
-        <!-- Main wrapper - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <div id="main-wrapper">
-		
-            <!-- ============================================================== -->
-            <!-- Top header  -->
-            <!-- ============================================================== -->
-            <!-- Start Navigation -->
-			<div class="header header-light head-shadow">
-				<div class="container">
-					<nav id="navigation" class="navigation navigation-landscape">
-						<div class="nav-header">
-							<a class="nav-brand" href="#">
-								<img src="assets/img/logo.png" class="logo" alt="" />
-							</a>
-							<div class="nav-toggle"></div>
-						</div>
-						<div class="nav-menus-wrapper" style="transition-property: none;">
-							<ul class="nav-menu">
-							
-								<li class="active"><a href="#">Home<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="index.html">Home 1</a></li>
-										<li><a href="home-2.html">Home 2</a></li>
-										<li><a href="home-3.html">Home 3</a></li>
-										<li><a href="home-4.html">Home 4</a></li>
-										<li><a href="home-5.html">Home 5</a></li>
-										<li><a href="home-6.html">Home 6</a></li>
-										<li><a href="home-7.html">Home 7</a></li>
-										<li><a href="home-8.html">Home 8</a></li>
-										<li><a href="home-9.html">Home 9</a></li>
-										<li><a href="home-10.html">Home 10</a></li>
-									</ul>
-								</li>
-								
-								<li><a href="#">Courses<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="#">Courses Grid Sidebar<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="grid-with-sidebar.html">Courses grid 1</a></li>
-												<li><a href="grid-with-sidebar-2.html">Courses grid 1</a></li>
-												<li><a href="grid-with-sidebar-3.html">Courses grid 1</a></li>
-											</ul>
-										</li>
-										<li><a href="list-with-sidebar.html">List Layout with Sidebar</a></li>
-										<li><a href="#">Courses Grid Full Width<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="full-width-course.html">Courses grid 1</a></li>
-												<li><a href="full-width-course-2.html">Courses grid 1</a></li>
-												<li><a href="full-width-course-3.html">Courses grid 1</a></li>
-												<li><a href="full-width-course-4.html">Courses grid 1</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Courses Detail<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="detail.html">Course Detail 1</a></li>
-												<li><a href="detail-2.html">Course Detail 2</a></li>
-												<li><a href="detail-3.html">Course Detail 3</a></li>
-												<li><a href="detail-4.html">Course Detail 4</a></li>
-												<li><a href="detail-5.html">Course Detail 5</a></li>
-											</ul>
-										</li>
-										<li><a href="find-instructor.html">Find Instructor</a></li>
-										<li><a href="instructor-detail.html">Instructor Detail</a></li>
-									</ul>
-								</li>
-								
-								<li><a href="#">Pages<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li class=""><a href="#">User Dashboard<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="dashboard.html">User Dashboard</a></li>
-												<li><a href="my-profile.html">My Profile</a></li>
-												<li><a href="all-courses.html">My Courses</a></li>
-												<li><a href="my-order.html">My Order</a></li>
-												<li><a href="saved-courses.html">Saved Courses</a></li>
-												<li><a href="reviews.html">My Reviews</a></li>
-												<li><a href="settings.html">My Settings</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Shop Pages<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="shop-full-width.html">Shop Full Width</a></li>
-												<li><a href="shop-left-sidebar.html">Shop Sidebar Left</a></li>
-												<li><a href="shop-right-sidebar.html">Shop Sidebar Right</a></li>
-												<li><a href="product-detail.html">Shop Detail</a></li>
-												<li><a href="add-to-cart.html">Add To Cart</a></li>
-												<li><a href="product-wishlist.html">Wishlist</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
-												<li><a href="shop-order.html">Order</a></li>
-											</ul>
-										</li>
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="blog.html">Blog Style</a></li>
-										<li><a href="blog-detail.html">Blog Detail</a></li>
-										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="register.html">Register</a></li>
-										<li><a href="component.html">Elements</a></li>
-										<li><a href="privacy.html">Privacy Policy</a></li>
-										<li><a href="faq.html">FAQs</a></li>
-									</ul>
-								</li>
-								
-								<li><a href="contact.html">Contact</a></li>
-								
-							</ul>
-							
-							<ul class="nav-menu nav-menu-social align-to-right">
-								
-								<li class="login_click light">
-									<a href="#" data-toggle="modal" data-target="#login">Sign in</a>
-								</li>
-								<li class="login_click theme-bg">
-									<a href="#" data-toggle="modal" data-target="#signup">Sign up</a>
-								</li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-			<!-- End Navigation -->
-			<div class="clearfix"></div>
-			<!-- ============================================================== -->
-			<!-- Top header  -->
-			<!-- ============================================================== -->	
+<?php include 'partials/header.php';?>
 
 			
+
+<?php
+$id=$_GET['tid'];
+$result=mysqli_query($conn,"SELECT courses.*, teachers.* , categories.*
+FROM courses
+JOIN teachers ON courses.teacher_id = teachers.id
+JOIN categories ON categories.id = courses.course_category
+where teachers.id=$id");
+$row=mysqli_fetch_assoc($result);
+?>
 			<!-- ============================ Instructor header Start================================== -->
 			<div class="image-cover ed_detail_head invers" style="background:#0b1c38;" data-overlay="0">
 				<div class="container">
@@ -161,29 +18,16 @@
 						<div class="col-lg-12 col-md-12">
 							<div class="viewer_detail_wraps">
 								<div class="viewer_detail_thumb">
-									<img src="assets/img/user-3.jpg" class="img-fluid" alt="" />
-									<div class="viewer_status">pro</div>
+									<img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
 								</div>
 								<div class="caption">
 									<div class="viewer_package_status">6 Year Expe.</div>
 									<div class="viewer_header">
-										<h4>Adam Willsoriam</h4>
-										<span class="viewer_location">Web Designer, Canada</span>
-										<ul>
-											<li><strong>112</strong> Points</li>
-											<li><strong>87</strong> Videos</li>
-											<li><strong>120</strong> Lectures</li>
-										</ul>
+										<h4><?php echo $row['name']?></h4>
+										<span class="viewer_location"><?php echo $row['designation']?> , <?php echo $row['department']?></span>
+									
 									</div>
-									<div class="viewer_header">
-										<ul class="badge_info">
-											<li class="started"><i class="ti-rocket"></i></li>
-											<li class="medium"><i class="ti-cup"></i></li>
-											<li class="platinum"><i class="ti-thumb-up"></i></li>
-											<li class="elite unlock"><i class="ti-medall"></i></li>
-											<li class="power unlock"><i class="ti-crown"></i></li>
-										</ul>
-									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -207,220 +51,50 @@
 									<li class="nav-item">
 										<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Education</a>
 									</li>
-									<li class="nav-item">
-										<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reviews</a>
-									</li>
+								
 								</ul>
 								<div class="tab-content" id="myTabContent">
 									
 									<!-- Classess -->
 									<div class="tab-pane fade show active p-2" id="home" role="tabpanel" aria-labelledby="home-tab">
 										<div class="row">
-					
+										<?php 
+                                                $tid=$_GET['tid'];
+
+												$result1=mysqli_query($conn,"SELECT courses.*, teachers.* ,categories.*
+												FROM teachers 
+												JOIN courses ON courses.teacher_id = teachers.id
+												JOIN categories ON categories.id = courses.course_category
+												 where teachers.id=$tid");
+											while($row1=mysqli_fetch_assoc($result1)){
+											?>
 											<!-- Single Video -->
 											<div class="col-lg-4 col-md-6">
 												<div class="edu-watching">
 													<div class="property_video sm">
 														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-1.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
+															<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row1['thumbnail']?>" alt="7.jpg">
+															
 														</div>
 														<div class="edu_duration">25:10</div>
 													</div>
 													<div class="edu_video detail">
 														<div class="edu_video_header">
-															<h4><a href="#">Start Learning Web Designing New Tools Start with Begining</a></h4>
+															<h4><a href="#"><?php echo $row1['course_title']?></a></h4>
 														</div>
 														<div class="edu_video_bottom">
 															<div class="edu_video_bottom_left">
-																<span>Lession 07 of 12</span>	
+																<span>Lectures -<?php echo $row1['lectures']?></span>	
 															</div>
 															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
+																<i class="ti-desktop"></i><?php echo $row1['category_name']?>
 															</div>
 														</div>
 													</div>
 												</div>							
 											</div>
-											
-											<!-- Single Video -->
-											<div class="col-lg-4 col-md-6">
-												<div class="edu-watching">
-													<div class="property_video sm">
-														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-2.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="edu_duration">40:25</div>
-													</div>
-													<div class="edu_video detail">
-														<div class="edu_video_header">
-															<h4><a href="#">The Complete Business Plan Course (Includes 50 Templates)</a></h4>
-														</div>
-														<div class="edu_video_bottom">
-															<div class="edu_video_bottom_left">
-																<span>Lession 08 of 10</span>	
-															</div>
-															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
-															</div>
-														</div>
-													</div>
-												</div>							
-											</div>
-											
-											<!-- Single Video -->
-											<div class="col-lg-4 col-md-6">
-												<div class="edu-watching">
-													<div class="property_video sm">
-														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-3.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="edu_duration">12:10</div>
-													</div>
-													<div class="edu_video detail">
-														<div class="edu_video_header">
-															<h4><a href="#">An Entire MBA In 1 Course:Award Winning Business School Prof</a></h4>
-														</div>
-														<div class="edu_video_bottom">
-															<div class="edu_video_bottom_left">
-																<span>Lession 07 of 15</span>	
-															</div>
-															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
-															</div>
-														</div>
-													</div>
-												</div>							
-											</div>
-											
-											<!-- Single Video -->
-											<div class="col-lg-4 col-md-6">
-												<div class="edu-watching">
-													<div class="property_video sm">
-														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-4.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="edu_duration">20:10</div>
-													</div>
-													<div class="edu_video detail">
-														<div class="edu_video_header">
-															<h4><a href="#">The Complete Financial Analyst Course 2020</a></h4>
-														</div>
-														<div class="edu_video_bottom">
-															<div class="edu_video_bottom_left">
-																<span>Lession 05 of 10</span>	
-															</div>
-															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
-															</div>
-														</div>
-													</div>
-												</div>							
-											</div>
-											
-											<!-- Single Video -->
-											<div class="col-lg-4 col-md-6">
-												<div class="edu-watching">
-													<div class="property_video sm">
-														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-5.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="edu_duration">40:20</div>
-													</div>
-													<div class="edu_video detail">
-														<div class="edu_video_header">
-															<h4><a href="#">PMP Exam Prep Seminar - PMBOK Guide 6</a></h4>
-														</div>
-														<div class="edu_video_bottom">
-															<div class="edu_video_bottom_left">
-																<span>Lession 07 of 15</span>	
-															</div>
-															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
-															</div>
-														</div>
-													</div>
-												</div>							
-											</div>
-											
-											<!-- Single Video -->
-											<div class="col-lg-4 col-md-6">
-												<div class="edu-watching">
-													<div class="property_video sm">
-														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="assets/img/course-6.jpg" alt="7.jpg">
-															<div class="overlay_icon">
-																<div class="bb-video-box">
-																	<div class="bb-video-box-inner">
-																		<div class="bb-video-box-innerup">
-																			<a href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video" class="theme-cl"><i class="ti-control-play"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="edu_duration">20:30</div>
-													</div>
-													<div class="edu_video detail">
-														<div class="edu_video_header">
-															<h4><a href="#">Tableau 2020 A-Z:Hands-On Tableau Training For Data Science!</a></h4>
-														</div>
-														<div class="edu_video_bottom">
-															<div class="edu_video_bottom_left">
-																<span>Lession 05 of 12</span>	
-															</div>
-															<div class="edu_video_bottom_right">
-																<i class="ti-desktop"></i>Designing
-															</div>
-														</div>
-													</div>
-												</div>							
-											</div>
-											
+											<?php }?>
+										
 										</div>
 									</div>
 									
@@ -535,212 +209,8 @@
 			<!-- ============================ Instructor Detail ================================== -->
 			
 			
-			<!-- ============================ Footer Start ================================== -->
-			<footer class="dark-footer skin-dark-footer">
-				<div>
-					<div class="container">
-						<div class="row">
-							
-							<div class="col-lg-3 col-md-3">
-								<div class="footer-widget">
-									<img src="assets/img/logo-light.png" class="img-footer" alt="" />
-									<div class="footer-add">
-										<p>4967  Sardis Sta, Victoria 8007, Montreal.</p>
-										<p>+1 246-345-0695</p>
-										<p>info@learnup.com</p>
-									</div>
-									
-								</div>
-							</div>		
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">Navigations</h4>
-									<ul class="footer-menu">
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="faq.html">FAQs Page</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="blog.html">Blog</a></li>
-									</ul>
-								</div>
-							</div>
-									
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">New Categories</h4>
-									<ul class="footer-menu">
-										<li><a href="#">Designing</a></li>
-										<li><a href="#">Nusiness</a></li>
-										<li><a href="#">Software</a></li>
-										<li><a href="#">WordPress</a></li>
-										<li><a href="#">PHP</a></li>
-									</ul>
-								</div>
-							</div>
-							
-							<div class="col-lg-2 col-md-3">
-								<div class="footer-widget">
-									<h4 class="widget-title">Help & Support</h4>
-									<ul class="footer-menu">
-										<li><a href="#">Documentation</a></li>
-										<li><a href="#">Live Chat</a></li>
-										<li><a href="#">Mail Us</a></li>
-										<li><a href="#">Privacy</a></li>
-										<li><a href="#">Faqs</a></li>
-									</ul>
-								</div>
-							</div>
-							
-							<div class="col-lg-3 col-md-12">
-								<div class="footer-widget">
-									<h4 class="widget-title">Download Apps</h4>
-									<a href="#" class="other-store-link">
-										<div class="other-store-app">
-											<div class="os-app-icon">
-												<i class="lni-playstore theme-cl"></i>
-											</div>
-											<div class="os-app-caps">
-												Google Play
-												<span>Get It Now</span>
-											</div>
-										</div>
-									</a>
-									<a href="#" class="other-store-link">
-										<div class="other-store-app">
-											<div class="os-app-icon">
-												<i class="lni-apple theme-cl"></i>
-											</div>
-											<div class="os-app-caps">
-												App Store
-												<span>Now it Available</span>
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				
-				<div class="footer-bottom">
-					<div class="container">
-						<div class="row align-items-center">
-							
-							<div class="col-lg-6 col-md-6">
-								<p class="mb-0">© 2020 LearnUp. Designd By <a href="https://themezhub.com/">Themezhub</a>.</p>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 text-right">
-								<ul class="footer-bottom-social">
-									<li><a href="#"><i class="ti-facebook"></i></a></li>
-									<li><a href="#"><i class="ti-twitter"></i></a></li>
-									<li><a href="#"><i class="ti-instagram"></i></a></li>
-									<li><a href="#"><i class="ti-linkedin"></i></a></li>
-								</ul>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- ============================ Footer End ================================== -->
-			
-			<!-- Log In Modal -->
-			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
-					<div class="modal-content" id="registermodal">
-						<span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
-						<div class="modal-body">
-							<h4 class="modal-header-title">Log In</h4>
-							<div class="login-form">
-								<form>
-								
-									<div class="form-group">
-										<label>User Name</label>
-										<input type="text" class="form-control" placeholder="Username">
-									</div>
-									
-									<div class="form-group">
-										<label>Password</label>
-										<input type="password" class="form-control" placeholder="*******">
-									</div>
-									
-									<div class="form-group">
-										<button type="submit" class="btn btn-md full-width pop-login">Login</button>
-									</div>
-								
-								</form>
-							</div>
-							
-							<div class="social-login mb-3">
-								<ul>
-									<li>
-										<input id="reg" class="checkbox-custom" name="reg" type="checkbox">
-										<label for="reg" class="checkbox-custom-label">Save Password</label>
-									</li>
-									<li><a href="#" class="theme-cl">Forget Password?</a></li>
-								</ul>
-							</div>
-							
-							<div class="text-center">
-								<p class="mt-2">Haven't Any Account? <a href="register.html" class="link">Click here</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Modal -->
-			
-			<!-- Sign Up Modal -->
-			<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="sign-up" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
-					<div class="modal-content" id="sign-up">
-						<span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
-						<div class="modal-body">
-							<h4 class="modal-header-title">Sign Up</h4>
-							<div class="login-form">
-								<form>
-								
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Full Name">
-									</div>
-									
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email">
-									</div>
-									
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Username">
-									</div>
-									
-									<div class="form-group">
-										<input type="password" class="form-control" placeholder="*******">
-									</div>
-
-									
-									<div class="form-group">
-										<button type="submit" class="btn btn-md full-width pop-login">Sign Up</button>
-									</div>
-								
-								</form>
-							</div>
-							<div class="text-center">
-								<p class="mt-3"><i class="ti-user mr-1"></i>Already Have An Account? <a href="#" class="link">Go For LogIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Modal -->
-			
-			<!-- Video Modal -->
-			<div class="modal fade" id="popup-video" tabindex="-1" role="dialog" aria-labelledby="popup-video" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<iframe class="embed-responsive-item" width="100%" height="480" src="https://www.youtube.com/embed/qN3OueBm9F4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				</div>
-			</div>
-			<!-- End Video Modal -->
+		
+		<?php include 'partials/footer.php';?>
 			
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 			
