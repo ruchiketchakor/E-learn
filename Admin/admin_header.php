@@ -26,7 +26,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>ELearn - Online Course & Education HTML Template</title>
+    <title>ELearn - Online Course System</title>
 
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">

@@ -1,3 +1,7 @@
+<?php
+ include 'db_connect.php';
+// session_start();
+?>
 <footer class="dark-footer skin-dark-footer">
 				<div>
 					<div class="container">
@@ -19,7 +23,7 @@
 									<h4 class="widget-title">Menu</h4>
 									<ul class="footer-menu">
 										<li><a href="about-us.php">About Us</a></li>
-										<li><a href="faq.php">Courses</a></li>
+										<!-- <li><a href="faq.php">Courses</a></li> -->
 										<li><a href="checkout.php">Checkout</a></li>
 										<li><a href="contact.php">Contact</a></li>
 										<!-- <li><a href="blog.html">Blog</a></li> -->
@@ -31,11 +35,13 @@
 								<div class="footer-widget">
 									<h4 class="widget-title">Categories</h4>
 									<ul class="footer-menu">
-										<li><a href="full-width-course-3.html">Web Development</a></li>
-										<li><a href="full-width-course-3.html">Artificial Intelligence</a></li>
-										<li><a href="full-width-course-3.html">Android Development</a></li>
-										<li><a href="full-width-course-3.html">Digital Marketing</a></li>
-										<li><a href="full-width-course-3.html">Machine Learning</a></li>
+										
+										<?php
+											 $result = mysqli_query($conn, "SELECT * FROM categories "); 
+											 while($row=mysqli_fetch_assoc($result)){
+											?>
+											<li><a href="course_show.php?id=<?php echo $row['id']?>"><?php echo $row['category_name']?><span class="submenu-indicator"></span></a></li>						
+											<?php }?>
 									</ul>
 								</div>
 							</div>

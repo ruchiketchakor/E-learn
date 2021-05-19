@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<!-- Top header  -->
 		
 			<!-- ============================ Hero Banner  Start================================== -->
-			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/bg3.jpg);   background-position: center;
+			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/Background.jpg);   background-position: center;
            " data-overlay="0">
 				<div class="container">
 					<!-- Type -->
@@ -164,7 +164,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								</div>
 								<div class="trips_detail">
 									<h4>100+ online courses</h4>
-									<p>Nor again is there anyone who loves or pursues or desires</p>
+									<p>Get unlimited access to 100+ courses, Specializations for one all-inclusive price.</p>
 								</div>
 							</div>
 						</div>
@@ -176,7 +176,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								</div>
 								<div class="trips_detail">
 									<h4>Expert instruction</h4>
-									<p>Nam libero tempore, cum soluta and nobis est eligendi optio</p>
+									<p>Promote transformative skill development for employees, teach students in-demand career skills.</p>
 								</div>
 							</div>
 						</div>
@@ -188,7 +188,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								</div>
 								<div class="trips_detail">
 									<h4>Lifetime access</h4>
-									<p>These cases are perfectly simple and easy to distinguish</p>
+									<p>Save money on learning with a E-Learn! Get unlimited access to 100+ courses.</p>
 								</div>
 							</div>
 						</div>
@@ -308,8 +308,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								<div class="sec-heading mb-3">
 									<h2>Know about <span class="theme-cl">e-Learn</span> learning platform</h2>
 								</div>
-								<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et voluptatem.</p>
-								<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut</p>
+								<p>E-Learn is a website that aims to provide life-changing learning experiences to anyone, anywhere. This is an online learning platform for higher education, here the world is coming to learn the necessary skills.</p>
+								<p>Explore hundreds of free courses or get started with a free trial. Enjoy high-quality curriculum, affordable pricing, and flexible scheduling. E-Learn for Campus empowers any university to offer high-quality, job-relevant online education to students, alumni, faculty, and staff.</p>
 								<div class="cource_facts">
 									<ul>
 										<li><span class="theme-cl">7m</span>Active Cources</li>

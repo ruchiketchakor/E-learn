@@ -5,6 +5,8 @@ session_start();
  if(isset($_SESSION['teacherid'])){
     header("Location:Admin/dashboard.php");
  }
+ $activePage = basename($_SERVER['PHP_SELF'], ".php");
+
 ?>
 
 
@@ -17,7 +19,7 @@ session_start();
 		<meta name="author" content="www.frebsite.nl" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		
-        <title>ELearn - Online Course & Education HTML Template</title>
+        <title>ELearn - Online Course System</title>
 		 
         <!-- Custom CSS -->
         <link href="assets/css/styles.css" rel="stylesheet">
@@ -63,16 +65,13 @@ session_start();
 						<div class="nav-menus-wrapper" style="transition-property: none;  font-size: large; margin-top:20px">
 							<ul class="nav-menu">
 							
-								<li class="active"><a href="index.php">Home<span class="submenu-indicator"></span></a>
-									
-								</li>
+								<li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php">Home</a></li>
+								<li class="<?= ($activePage == 'about-us') ? 'active':''; ?>"><a href="about-us.php">About Us</a></li>
 
-								<li><a href="about-us.php">About<span class="submenu-indicator"></span></a>
 								
-								<li><a href="#">Courses<span class="submenu-indicator"></span></a>
+								<li class="<?= ($activePage == 'courses') ? 'active':''; ?>"><a href="#">Courses</a>
 									<ul class="nav-dropdown nav-submenu">
 									
-										<!-- <li><a href="list-with-sidebar.html">List Layout with Sidebar</a></li> -->
 										<li>
 											<?php
 											 $result = mysqli_query($conn, "SELECT * FROM categories "); 
@@ -84,7 +83,8 @@ session_start();
 										
 									</ul>
 								</li>
-								<li><a href="contact.php">Contact</a></li>
+								<li class="<?= ($activePage == 'contact') ? 'active':''; ?>"><a href="contact.php">Contact</a></li>
+
 								
 							</ul>
 							
