@@ -96,7 +96,7 @@
 								<div class="singles_items">
 									<div class="instructor_wrap">
 										<div class="instructor_thumb">
-											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
+											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="instructor_caption">
 											<h4><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h4>

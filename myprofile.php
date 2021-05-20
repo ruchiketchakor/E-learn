@@ -1,5 +1,11 @@
 <?php
- include 'header.php';
+ include 'partials/header.php';
+?>
+	
+<?php 
+$id= $_SESSION['userid'] ;
+$result=mysqli_query($conn,"SELECT * FROM  users where id=$id");
+$row=mysqli_fetch_assoc($result);
 ?>
             <div class="image-cover hero_banner hero-inner-2" style="background-image:url(assets/img/bg1.jpg)" data-overlay="0">
 				<div class="container">
@@ -8,13 +14,13 @@
                     	<!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
                         <div class="col-lg-12 col-md-12">
                             <div class="viewer_detail_thumb">
-                                <img src="assets/img/b-1.jpg" class="img-fluid" style="height:150px; width:150px;" alt="" />
+                                <img src="assets/student_images/<?php echo  $row['thumbnail']?>" class="img-fluid" style="height:150px; width:150px;" alt="" />
                                         <!-- <div class="viewer_status">pro</div> -->
                             </div>
 
                             <div class="banner-search-2 transparent">
-								<h3 class="property_block_title">Pallavi Brahmankar</h3>
-                                <h4 class="property_block_title">Web Developer</h4>
+								<h3 class="property_block_title"><?php echo  $_SESSION['username']?></h3>
+                                <h4 class="property_block_title"><?php echo  $_SESSION['useremail']?></h4>
                                 
 								<!-- <p>Study any topic, anytime. Choose from thousands of expert-led courses now.</p> -->
 								<!-- <div class="mt-4">
@@ -31,9 +37,10 @@
 					</div>
 				</div>
 			</div>
+
 			<!-- ============================ Hero Banner End ================================== -->
 			
-			<?php include 'footer.php';?>
+			<?php include 'partials/footer.php';?>
 
 		
 			<!-- End Modal -->

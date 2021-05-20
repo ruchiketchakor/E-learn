@@ -64,17 +64,9 @@
 
 						<div class="property_video xl">
 							<div class="thumb">
-								<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
+								<img class="pro_img img-fluid w100" src="Teacher/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
 								<div class="overlay_icon">
-									<!-- <div class="bb-video-box">
-										<div class="bb-video-box-inner">
-											<div class="bb-video-box-innerup">
-												<a href="Admin/assets/upload_video/"
-													data-toggle="modal" data-target="#popup-video" class="theme-cl"><i
-														class="ti-control-play"></i></a>
-											</div>
-										</div>
-									</div> -->
+									
 								</div>
 							</div>
 
@@ -83,7 +75,7 @@
 									<li>
 										<div class="ins_info">
 											<div class="ins_info_thumb">
-												<img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
+												<img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
 											</div>
 											<div class="ins_info_caption">
 												<span>Teacher</span>
@@ -187,7 +179,7 @@
 											JOIN videos ON videos.course_id = courses.cid
 											where courses.cid=$id");
 											$row=mysqli_fetch_assoc($result) ?>
-											<a href="#"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
+											<a href="#"><img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="single_instructor_caption">
 											<h4><a href="#"><?php echo $row['name']?></a></h4>
@@ -228,17 +220,9 @@
 										?>
 							<div class="property_video sm">
 								<div class="thumb">
-									<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
+									<img class="pro_img img-fluid w100" src="Teacher/assets/course_images/<?php echo $row['thumbnail']?>" alt="7.jpg">
 									<div class="overlay_icon">
-										<!-- <div class="bb-video-box">
-											<div class="bb-video-box-inner">
-												<div class="bb-video-box-innerup">
-													<a href="Admin/assets/upload_video/"
-														data-toggle="modal" data-target="#popup-video"
-														class="theme-cl"><i class="ti-control-play"></i></a>
-												</div>
-											</div>
-										</div> -->
+										
 									</div>
 								</div>
 							</div>

@@ -63,6 +63,7 @@ FROM courses
 JOIN teachers ON courses.teacher_id = teachers.id
 JOIN videos ON videos.course_id = courses.cid
 JOIN categories ON categories.id = courses.course_category
+
 where courses.cid=$id");
 $row=mysqli_fetch_assoc($result);
 ?>
@@ -84,7 +85,7 @@ $row=mysqli_fetch_assoc($result);
 							</div>
 							
 							<video  id="player" playsinline controls controlsList="nodownload">
-							<source id="video" src="Admin/assets/upload_video/<?php echo $row['video']?>" type="video/mp4" />
+							<source id="video" src="Teacher/assets/upload_video/<?php echo $row['video']?>" type="video/mp4" />
 							</video>
 							
 					</div>	
@@ -211,11 +212,9 @@ $row=mysqli_fetch_assoc($result);
 								 
 												?>
 												<div class="reviews-comments-item">
-													<div class="review-comments-avatar">
-														<img src="assets/img/user-1.jpg" class="img-fluid" alt=""> 
-													</div>
+													
 													<div class="reviews-comments-item-text">
-														<h4><a href="#"><?php echo $row['rname']?></a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i><?php echo $row['date']?></span></h4>
+														<h4><a href="#" class="pr-3"><?php echo $row['rname']?></a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i><?php echo $row['date']?></span></h4>
 														
 														<div class="clearfix"></div>
 														<p><?php echo $row['query']?></p>
@@ -273,7 +272,7 @@ $row=mysqli_fetch_assoc($result);
 	<script>
 	function showvideo(videourl,overview){
 	
-		document.getElementById("video").src='Admin/assets/upload_video/'+videourl;
+		document.getElementById("video").src='Teacher/assets/upload_video/'+videourl;
 		document.getElementById("player").load();
 		document.getElementById("voverview").innerHTML=''+overview;
 		// document.getElementById("view").load();

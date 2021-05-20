@@ -1,206 +1,119 @@
 
-<?php
-include './admin_header.php';
+ <?php
+include 'header.php';
 ?>
-                    <div class="col-lg-9 col-md-9 col-sm-12">
-                   
-                        <!-- Row -->
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- /Row -->
-
-                        <!-- Row -->
-                        <div class="row">
-
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="dashboard_stats_wrap widget-1">
-                                    <div class="dashboard_stats_wrap_content">
-                                        <h4>607</h4> <span>Total Courses</span>
-                                    </div>
-                                    <div class="dashboard_stats_wrap-icon"><i class="ti-location-pin"></i></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="dashboard_stats_wrap widget-2">
-                                    <div class="dashboard_stats_wrap_content">
-                                        <h4>102</h4> <span>Total Enroll Student </span>
-                                    </div>
-                                    <div class="dashboard_stats_wrap-icon"><i class="ti-pie-chart"></i></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="dashboard_stats_wrap widget-4">
-                                    <div class="dashboard_stats_wrap_content">
-                                        <h4>70</h4> <span>Total Notifications</span>
-                                    </div>
-                                    <div class="dashboard_stats_wrap-icon"><i class="ti-user"></i></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /Row -->
-
-                        <!-- Row -->
-                        <div class="row">
-
-                            <div class="col-lg-8 col-md-12 col-sm-12">
-                                <div class="row">
-
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="course_overlay_cat">
-                                            <div class="course_overlay_cat_thumb">
-                                                <a href="#" tabindex="0"><img src="assets/img/course-1.jpg"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="course_overlay_cat_caption">
-                                                <div class="llp-left">
-                                                    <h4><a href="#">Web Designing</a></h4>
-                                                    <span>17 Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="course_overlay_cat">
-                                            <div class="course_overlay_cat_thumb">
-                                                <a href="#" tabindex="0"><img src="assets/img/course-2.jpg"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="course_overlay_cat_caption">
-                                                <div class="llp-left">
-                                                    <h4><a href="#">Digital Marketing</a></h4>
-                                                    <span>20 Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="course_overlay_cat">
-                                            <div class="course_overlay_cat_thumb">
-                                                <a href="#" tabindex="0"><img src="assets/img/course-3.jpg"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="course_overlay_cat_caption">
-                                                <div class="llp-left">
-                                                    <h4><a href="#">Account & Chart</a></h4>
-                                                    <span>22 Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="course_overlay_cat">
-                                            <div class="course_overlay_cat_thumb">
-                                                <a href="#" tabindex="0"><img src="assets/img/course-5.jpg"
-                                                        class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="course_overlay_cat_caption">
-                                                <div class="llp-left">
-                                                    <h4><a href="#">Business Development</a></h4>
-                                                    <span>10 Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-12 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Notifications</h6>
-                                    </div>
-                                    <div class="ground-list ground-hover-list">
-
-                                    <?php 
-
-											$query=mysqli_query($conn,"SELECT queries.*, courses.* 
-											FROM courses 
-											JOIN queries ON courses.cid = queries.course_id ");
-									        $run = mysqli_fetch_assoc($query);
-										   while($row = mysqli_fetch_assoc($query)){
-                                           if(empty($row['solution'])){
-					                       
-											?>
-                                        <div class="ground ground-list-single">
-                                            <a href="#">
-                                                <div class="btn-circle-40 btn-success"><i class="ti-calendar"></i></div>
-                                            </a>
-
-                                            <div class="ground-content">
-                                                <h6><a href="review.php"><?php echo $row['rname']?></a></h6>
-                                                <small class="text-fade font-weight-bold pb-2"><?php echo $row['remail']?></small>
-                                                <span class="small"><?php echo $row['query']?></span>
-                                            </div>
-                                        </div>
-                                       <?php } }?>
-                                       
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /Row -->
-
-                     
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- ============================ Dashboard: Dashboard End ================================== -->
-
-        <!-- ================================= End Newsletter =============================== -->
-
-        <!-- ============================ Footer Start ================================== -->
-        
-        <!-- End Modal -->
-
-        <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-
-
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
+    <!-- /.content-header -->
 
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <script src="assets/js/metisMenu.min.js"></script>
-    <script>
-    $('#side-menu').metisMenu();
-    </script>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>200+</h3>
 
-</body>
+                <p>Total Courses</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="allcourses.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>80+<sup style="font-size: 20px"></sup></h3>
 
-<!-- Mirrored from codeminifier.com/learnup-1.1/learnup/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Sep 2020 06:38:45 GMT -->
+                <p>Professors</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="allteachers.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>580+</h3>
 
-</html>
+                <p>Students</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="allstudents.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>100+</h3>
+
+                <p>Course Categories</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="coursecat.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+      
+
+
+
+
+
+
+
+              <!-- /.card-header -->
+              <div class="card-body pt-0">
+                <!--The calendar -->
+                <div id="calendar" style="width: 100%"></div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <?php
+include 'footer.php';
+?>

@@ -3,7 +3,7 @@
 session_start();
 
  if(isset($_SESSION['teacherid'])){
-    header("Location:Admin/dashboard.php");
+    header("Location:Teacher/dashboard.php");
  }
  $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
@@ -99,7 +99,7 @@ session_start();
 							<a> ' .$_SESSION['username'].'<span class="submenu-indicator"></span></a>
 							<ul class="nav-dropdown nav-submenu">
 							<li><a href="myprofile.php">My Profile<span class="submenu-indicator"></span></a></li>
-							<li><a href="#">My Courses<span class="submenu-indicator"></span></a></li>
+							<li><a href="my_courses.php">My Courses<span class="submenu-indicator"></span></a></li>
 							<li><a href="help.php">Help Center<span class="submenu-indicator"></span></a></li>
 							<li><a href="partials/_logout.php">Logout<span class="submenu-indicator"></span></a></li>
 

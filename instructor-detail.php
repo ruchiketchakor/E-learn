@@ -18,7 +18,7 @@ $row=mysqli_fetch_assoc($result);
 						<div class="col-lg-12 col-md-12">
 							<div class="viewer_detail_wraps">
 								<div class="viewer_detail_thumb">
-									<img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
+									<img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt="" />
 								</div>
 								<div class="caption">
 									<div class="viewer_package_status">6 Year Expe.</div>
@@ -73,7 +73,7 @@ $row=mysqli_fetch_assoc($result);
 												<div class="edu-watching">
 													<div class="property_video sm">
 														<div class="thumb">
-															<img class="pro_img img-fluid w100" src="Admin/assets/course_images/<?php echo $row1['thumbnail']?>" alt="7.jpg">
+															<img class="pro_img img-fluid w100" src="Teacher/assets/course_images/<?php echo $row1['thumbnail']?>" alt="7.jpg">
 															
 														</div>
 														<div class="edu_duration">25:10</div>

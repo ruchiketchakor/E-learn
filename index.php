@@ -23,13 +23,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
        $_SESSION['useremail'] = $useremail;
 	   echo "logged in" .$username; 
 		$alert="true";
-		if($row['user_category']=="Teacher"){
+		if($row['user_email']=="admin@admin.com" AND $row['user_category']=="admin"){
+			header("Location:Admin/dashboard.php");
+		}
+		else if($row['user_category']=="Teacher"){
 			$query = "SELECT * FROM `teachers` WHERE email='$useremail'";
 			$run = mysqli_query($conn, $query);
 			$row1 = mysqli_fetch_assoc($run);
 			//  $row = mysqli_fetch_assoc($res);
 			  $_SESSION['teacherid'] = $row1['id'];
-			header("Location:Admin/dashboard.php?loginsuccess=true");
+			header("Location:Teacher/dashboard.php?loginsuccess=true");
 		}
 		else{
 
@@ -61,13 +64,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			<!-- ============================================================== -->
 			<!-- Top header  -->
 		
-			<!-- ============================ Hero Banner  Start================================== -->
-			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/Background.jpg);   background-position: center;
-           " data-overlay="0">
+
+			<div class="image-cover hero_banner hero-inner-2" style="background:#f4f4f4 url(assets/img/back2.JPG);   background-position: center;
+ " data-overlay="0">
 				<div class="container">
 					<!-- Type -->
 					<div class="row align-items-center">
-                    	<div class="col-lg-6 col-md-6 col-sm-12">
+                    	<div class="col-lg-4 col-md-4 col-sm-12">
 						<?php 
              if(isset($_GET['resetpass']) && $_GET['resetpass']=="true"){
               echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert" style="
@@ -132,18 +135,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
              }
            ?>
 		    
-							<div class="banner-search-2 transparent">
-								<h1 class="big-header-capt cl_2 mb-2 f_2">Your New<br>Development Skills</h1>
-								<p>Study any topic, anytime. Choose from thousands of expert-led courses now.</p>
-								<!-- <div class="mt-4">
-									<a href="#" class="btn btn-modern dark">Enroll Now<span><i class="ti-arrow-right"></i></span></a>
-								</div> -->
-							</div>
+							
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							
 						</div>
 						
-						<div class="col-lg-6 col-md-6 col-sm-12">
+						
+						<div class="col-lg-4 col-md-4 col-sm-12">
 							<div class="flixio pt-5">
-                                <!-- <img class="img-fluid" src="assets/img/bg3.jpg" alt=""> -->
+							<div class="banner-search-2 transparent ">
+								<h1 class="big-header-capt text-danger cl_2 mb-2 f_2">Your New<br>Development Skills</h1>
+								
+							</div>
                             </div>
 						</div>
 						
@@ -269,7 +273,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 							<div class="education_block_grid style_2">
 								
 								<div class="education_block_thumb n-shadow">
-									<a href="show-course-detail.php?id=<?php echo $run['cid']?>"><img src="Admin/assets/course_images/<?php echo $run['thumbnail']?>" class="img-fluid" alt=""></a>
+									<a href="show-course-detail.php?id=<?php echo $run['cid']?>"><img src="Teacher/assets/course_images/<?php echo $run['thumbnail']?>" class="img-fluid" alt=""></a>
 									<div class="cources_price">Rs <?php echo $run['amount']?></div>
 								</div>
 								
@@ -363,7 +367,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 								<div class="singles_items">
 									<div class="instructor_wrap">
 										<div class="instructor_thumb">
-											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
+											<a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a>
 										</div>
 										<div class="instructor_caption">
 											<h4><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h4>

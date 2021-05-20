@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
            $_SESSION['userid'] = $row['id'];
            $_SESSION['username'] = $user_name;
            $_SESSION['usercategory'] = $user_category;
-           $_SESSION['uemail'] = $user_email;
+           $_SESSION['useremail'] = $user_email;
            $_SESSION['upassword'] = $user_password;
          header("Location:../otp.php?signupsuccess=true");
         //  exit();

@@ -1,58 +1,17 @@
 <?php
  include 'partials/header.php';
 ?>
+
 <?php 
-include 'partials/db_connect.php';
-if (isset($_POST['submit'])) {
-
-$student_name = $_POST['name'];
-$student_degree= $_POST['degree'];
-$student_email= $_POST['email'];
-$student_about = $_POST['about'];
-$student_skill= $_POST['skill'];
-$student_location= $_POST['location'];
-$student_phone = $_POST['phoneno'];
-$student_website = $_POST['website'];
-$student_dob= $_POST['DOB'];
-$student_gender = $_POST['gender'];  
-
-// $query = "SELECT * FROM `students` WHERE email='$student_email'";
-// $run = mysqli_query($conn, $query);
-// $row = mysqli_fetch_assoc($run);
-// if($row['email']=="$student_email")
-// {
-// 	$result1 = mysqli_query($conn, "UPDATE `students` SET   `name`='$student_name', `degree`='$student_degree',`about`='$student_about',`skill`='$student_skill',`location`='$student_location',`phoneno`='$student_phone',`website`='$student_website',`DOB`='$student_dob', `gender`='$student_gender'  where email='$student_email'");       
-
-// }
-// else
-// {
-
-	$sql= "INSERT INTO `students` ( `name`,`degree`,'email', `about`,`skill`, `location`,`phoneno`,`website`,`DOB`,`gender`) 
-	VALUES ('$student_name', '$student_degree','$student_email', '$student_about', '$student_skill','$student_location','$student_phone','$student_website','$student_dob','$student_gender')";
-	$result = mysqli_query($conn, $sql);
-	if($result){
-
-    
-    //  $row = mysqli_fetch_assoc($res);
-    // $_SESSION['student-name'] =$student_name;
-	// $_SESSION['student_skill']=$student_skill;
-    //   $_SESSION['studentid'] = $row1['id'];
-    //  header("Location:Admin/time.php");
-    //  exit();
-	// $result1 = mysqli_query($conn, "UPDATE `students` SET   `name`='$student_name', `degree`='$student_degree',`about`='$student_about',`skill`='$student_skill',`location`='$student_location',`website`='$student_website',`DOB`='$student_dob', `gender`='$student_gender'  where phoneno='$student_phone'");       
-	// if($result1){
-    // header("Location:edit-myprofile.php?profile=updated");
-    // exit();
-	// }
-    //  }
-	}
-}
+$id= $_SESSION['userid'] ;
+$result=mysqli_query($conn,"SELECT * FROM  users where id=$id");
+$row=mysqli_fetch_assoc($result);
 ?>
 				<section class="align-center">
 					<div class="viewer_detail_wraps" style=" margin-top:-3rem;" >
                         <div class="viewer_detail_thumb order-last" style=" top:0; margin-left:4rem;">
-                            <form method="post" enctype="multipart/form-data">
-                                <img id="blah" src="assets/img/bg1.jpg"  class="img-fluid" style="width:100px;height:100px" alt="" />
+                            <form method="post" enctype="multipart/form-data" action="partials/edit_student_profile.php">
+                                <img id="blah" src="assets/student_images/<?php echo $row['thumbnail']?>"  class="img-fluid" style="width:100px;height:100px"  this.src="assets/img/bg1.jpg" />
                                 <!-- <img id="blah" class="mt-3 border" src="#" alt="your image" /> -->
 
                                 <div class="form-row">
@@ -75,8 +34,7 @@ $student_gender = $_POST['gender'];
                                 <h3>Edit My Profile</h3>
                             </div>
                             <div class="form-group col-lg-12 col-md-12">
-                                <button type="button" class="btn btn-theme  mt-1 mb-0"
-                                    onclick="location.href='myprofile.php'">View Profile</button>
+                               <a href="myprofile.php"> <button type="button" class="btn btn-theme  mt-1 mb-0" >View Profile</button></a>
 
                             </div>
 
@@ -104,13 +62,13 @@ $student_gender = $_POST['gender'];
 								</div> -->
 								<!-- <form action="javascript:sendmail()" method="POST"> -->
 								<div class="prc_wrap-body">
-									<form  method="POST">
+								
 									<div class="row">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
 												<label>Full Name</label>
 												<input type="text" class="form-control simple" id="Name" name="name"
-												value="<?php echo $row['name']?>">
+												value="<?php echo  $_SESSION['username']?>">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-12">
@@ -125,13 +83,13 @@ $student_gender = $_POST['gender'];
 									<div class="form-group">
 										<label>Email</label>
 										<input type="text" class="form-control simple" name="email"
-										value="<?php echo $row['email']?>">
+										value="<?php echo  $_SESSION['useremail']?>">
 									</div>
 									
 									<div class="form-group">
 										<label>About Me</label>
 										<textarea class="form-control simple" id="Message" name="about"
-										value="<?php echo $row['about']?>"></textarea>
+										><?php echo $row['about']?></textarea>
 									</div>
 
 									<div class="form-group">
@@ -167,7 +125,7 @@ $student_gender = $_POST['gender'];
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
 												<label>Date of Birth</label>
-												<input type="text" class="form-control simple" name="DOB"
+												<input type="date" class="form-control simple" name="DOB"
 												value="<?php echo $row['DOB']?>">
 											</div>
 										</div>

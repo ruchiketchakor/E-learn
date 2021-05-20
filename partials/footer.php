@@ -116,17 +116,11 @@
 							
 							<div class="social-login mb-3">
 								<ul>
-									<li>
-										<input id="reg" class="checkbox-custom" name="reg" type="checkbox">
-										<label for="reg" class="checkbox-custom-label">Save Password</label>
-									</li>
+									
 									<li><a href="forgotpass.php" class="theme-cl">Forget Password?</a></li>
 								</ul>
 							</div>
 							
-							<div class="text-center">
-								<p class="mt-2">Haven't Any Account? <a href="register.html" class="link">Click here</a></p>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -174,9 +168,7 @@
 								
 								</form>
 							</div>
-							<div class="text-center">
-								<p class="mt-3"><i class="ti-user mr-1"></i>Already Have An Account? <a href="#" class="link">Go For LogIn</a></p>
-							</div>
+							
 						</div>
 					</div>
 				</div>

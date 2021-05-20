@@ -73,7 +73,7 @@
 									<div class="education_block_grid style_2">
 										
 										<div class="education_block_thumb">
-											<a href="show-course-detail.php?id=<?php echo $row['cid']?>"><img src="Admin/assets/course_images/<?php echo $row['thumbnail']?>" class="img-fluid" alt=""></a>
+											<a href="show-course-detail.php?id=<?php echo $row['cid']?>"><img src="Teacher/assets/course_images/<?php echo $row['thumbnail']?>" class="img-fluid" alt=""></a>
 										</div>
 										
 										<div class="education_block_body">
@@ -83,7 +83,7 @@
 									
 										<div class="education_block_footer">
 											<div class="education_block_author">
-												<div class="path-img"><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Admin/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a></div>
+												<div class="path-img"><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><img src="Teacher/assets/teacher_images/<?php echo $row['photo']?>" class="img-fluid" alt=""></a></div>
 												<h5><a href="instructor-detail.php?tid=<?php echo $row['id']?>"><?php echo $row['name']?></a></h5>
 											</div>
 											<div class="cources_price_foot"> <?php if($row['amount']==0){
