@@ -7,6 +7,17 @@ $id= $_SESSION['userid'] ;
 $result=mysqli_query($conn,"SELECT * FROM  users where id=$id");
 $row=mysqli_fetch_assoc($result);
 ?>
+<style>
+@media(min-width:1024px)
+{
+	.viewer_detail_wraps{
+		margin-left:12rem;
+	}
+	.caption{
+		margin-left:-27rem;
+	}
+}
+</style>
 				<section class="align-center">
 					<div class="viewer_detail_wraps" style=" margin-top:-3rem;" >
                         <div class="viewer_detail_thumb order-last" style=" top:0; margin-left:4rem;">
